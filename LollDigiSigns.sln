@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "LollDigiSigns", "LollDigiSigns.dtproj", "{D5A5E2B6-0B9F-4F6F-98B5-6BF6EE16BC5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5A5E2B6-0B9F-4F6F-98B5-6BF6EE16BC5C}.Development|Default.ActiveCfg = Development
+		{D5A5E2B6-0B9F-4F6F-98B5-6BF6EE16BC5C}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED06906E-EB52-44EF-AD75-9AD22C51D9E3}
+	EndGlobalSection
+EndGlobal
