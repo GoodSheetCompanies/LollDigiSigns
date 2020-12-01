@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MarketingSlides"
   DTS:PackageType="5"
-  DTS:VersionBuild="241"
-  DTS:VersionGUID="{3FBA575E-0727-45B4-A016-9D5A44420C4E}">
+  DTS:VersionBuild="243"
+  DTS:VersionGUID="{2E67F40D-154F-4028-8326-BB3D2DEDE29A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -838,7 +838,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA85IDhnTGNkqurTbPQCEsXwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACJdA2MZAei3OdtwidJXQw2AAAAAASAAACgAAAAEAAAAFLVdq0KPQoJkoLFLMoZM2s4AAAAxfLu5Ubg0WbzTVMMvDHjf7bwLapZJ0c2DGJXyn+qAqEbhVwgcyqIeUjn+yGhxSMGsNKJpZ8sBesUAAAAozeWKez1PGvmPJKHoJUT/TfoMGo</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA85IDhnTGNkqurTbPQCEsXwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAIT5ZKdEImg3QEBQqB9Nh8AAAAAASAAACgAAAAEAAAADgbKLEvZGgPn+QnKMixN2M4AAAAwV2QL4eAw8sQ7s8E9ckfldSJk8+5bDbeXh5voWNFOsIuZ1XCuyG+fLH95by/DldNX60DEFkrMS0UAAAAN4TZ3oftI2ORw99f6ZPuKPkdvuc</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -853,7 +853,7 @@
           ConnectByProxy="False">
           <Password
             Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA85IDhnTGNkqurTbPQCEsXwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABLxGv7+iiKw3O7k2axlilIAAAAAASAAACgAAAAEAAAAOcK+ckeCDK/uaFWZvxaGNkoAAAAt8xYiI38mKGZQVTdOjQLlYM4vyJVNSG4gmgT4CUpapQmdBygfTLzvhQAAAAYSioinmE/4U+I1Arz3KTC8M1g9g</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA85IDhnTGNkqurTbPQCEsXwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA2/F8eaoT5Xn5M60vZ+qY9AAAAAASAAACgAAAAEAAAAFK/zPAYEYYUQt3rMwi0SZUoAAAA3IPawIHrc+hSjcJIyrmz4LudZzo6jreT7uXBMAOTYxkcZsuI0qo3NhQAAAApqXNcRXDfwa/GNVfeWjiF1yGLpA</Password>
         </SharePointConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -6635,118 +6635,6 @@ where [refTable].[guid] = ?</property>
           </paths>
         </pipeline>
       </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Foreach rsDeleteSlides"
-      DTS:CreationName="STOCK:FOREACHLOOP"
-      DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{EF59495D-7DBA-4FF8-A487-498FCEA29BD0}"
-      DTS:ExecutableType="STOCK:FOREACHLOOP"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Foreach rsDeleteSlides">
-      <DTS:ForEachEnumerator
-        DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{6E34FC8F-39C6-4F81-965E-060F15DFA2AC}"
-        DTS:ObjectName="{6E34FC8F-39C6-4F81-965E-060F15DFA2AC}">
-        <DTS:ObjectData>
-          <FEEADO
-            EnumType="EnumerateRowsInFirstTable"
-            VarName="User::rsDelSlides" />
-        </DTS:ObjectData>
-      </DTS:ForEachEnumerator>
-      <DTS:Variables />
-      <DTS:Executables>
-        <DTS:Executable
-          DTS:refId="Package\Foreach rsDeleteSlides\Delete Slide Image from Disk"
-          DTS:CreationName="Microsoft.FileSystemTask"
-          DTS:Description="File System Task"
-          DTS:DTSID="{A680C473-47DC-43FD-85CB-0E8EBCB34802}"
-          DTS:ExecutableType="Microsoft.FileSystemTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Delete Slide Image from Disk"
-          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <FileSystemData
-              TaskOperationType="DeleteFile"
-              TaskSourcePath="User::varFilePath"
-              TaskIsSourceVariable="True" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Foreach rsDeleteSlides\Expression Task"
-          DTS:CreationName="Microsoft.ExpressionTask"
-          DTS:Description="Expression Task"
-          DTS:DTSID="{882FC537-B8CA-4830-99DB-0A421BC42EA2}"
-          DTS:ExecutableType="Microsoft.ExpressionTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Expression Task"
-          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <ExpressionTask
-              Expression="@[User::varGuid] = Replace(Replace(@[User::varGuid],&quot;{&quot;,&quot;&quot;),&quot;}&quot;,&quot;&quot;)" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Foreach rsDeleteSlides\Remove Slides Image Data for delete slides"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{5B4BC77E-D332-4B8E-8D0F-F6C6A15EEC6E}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Remove Slides Image Data for delete slides"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{FE8E2A2E-7984-477F-8F21-1666479DB25C}"
-              SQLTask:SqlStatementSource="Update  tblEmployees&#xA;Set FilePath = NULL, ImageModified = NULL &#xA;Where guid = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="User::varGuid"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="129"
-                SQLTask:ParameterSize="100" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-      </DTS:Executables>
-      <DTS:PrecedenceConstraints>
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Foreach rsDeleteSlides.PrecedenceConstraints[Constraint]"
-          DTS:CreationName=""
-          DTS:DTSID="{0BE2E36B-76D6-42B0-9855-BB78E1C5A48E}"
-          DTS:From="Package\Foreach rsDeleteSlides\Delete Slide Image from Disk"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint"
-          DTS:To="Package\Foreach rsDeleteSlides\Remove Slides Image Data for delete slides" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Foreach rsDeleteSlides.PrecedenceConstraints[Constraint 1]"
-          DTS:CreationName=""
-          DTS:DTSID="{92CBFEA7-B5E6-45D9-BA62-7E0E3D0E2863}"
-          DTS:From="Package\Foreach rsDeleteSlides\Expression Task"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Foreach rsDeleteSlides\Delete Slide Image from Disk" />
-      </DTS:PrecedenceConstraints>
-      <DTS:ForEachVariableMappings>
-        <DTS:ForEachVariableMapping
-          DTS:CreationName=""
-          DTS:DTSID="{0A180507-8CF7-4086-BB3C-B344CD5EEC19}"
-          DTS:ObjectName="{0A180507-8CF7-4086-BB3C-B344CD5EEC19}"
-          DTS:ValueIndex="0"
-          DTS:VariableName="User::varFilePath" />
-        <DTS:ForEachVariableMapping
-          DTS:CreationName=""
-          DTS:DTSID="{E8BCC156-784A-4D89-AE69-5A472ECC546C}"
-          DTS:ObjectName="{E8BCC156-784A-4D89-AE69-5A472ECC546C}"
-          DTS:ValueIndex="1"
-          DTS:VariableName="User::varGuid" />
-      </DTS:ForEachVariableMappings>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Foreach Slide Image"
@@ -12757,8 +12645,8 @@ where [refTable].[guid] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{04FF4B08-F7CC-4802-9C1B-F6AE903F3300}"
-      DTS:From="Package\Update Slides"
+      DTS:DTSID="{5E3B44F1-0FEB-43E4-BEE3-D5FAFF14F930}"
+      DTS:From="Package\Get or Update Slides"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Create rsSlides" />
@@ -12781,8 +12669,8 @@ where [refTable].[guid] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{A7DA4C5B-2460-438E-96A5-4F65AA208413}"
-      DTS:From="Package\Get or Update Slides"
+      DTS:DTSID="{5A131FDD-DC58-4091-98A4-2F5384213997}"
+      DTS:From="Package\Create rsSlides"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Update Slides" />
@@ -12813,27 +12701,19 @@ where [refTable].[guid] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{C440368F-3824-4463-84B6-355008699130}"
-      DTS:From="Package\Foreach rsDeleteSlides"
+      DTS:DTSID="{E72B32D2-9FDD-4924-B52D-A1C88F52A595}"
+      DTS:From="Package\Foreach Slide Image"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
       DTS:To="Package\Remove Deleted Slides" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
-      DTS:DTSID="{1844065A-F6A7-40AA-88A6-4172DF328819}"
-      DTS:From="Package\Create rsSlides"
+      DTS:DTSID="{0A33769C-CFE5-47EA-9A59-52DA39E2607D}"
+      DTS:From="Package\Update Slides"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
       DTS:To="Package\Foreach Slide Image" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
-      DTS:CreationName=""
-      DTS:DTSID="{A5675948-ABF9-4B64-A7DC-4DD4034482E2}"
-      DTS:From="Package\Foreach Slide Image"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 9"
-      DTS:To="Package\Foreach rsDeleteSlides" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -12854,7 +12734,7 @@ where [refTable].[guid] = ?</property>
         <NodeLayout
           Size="154,42"
           Id="Package\Create rsSlides"
-          TopLeft="466.031249988359,955.973684435901" />
+          TopLeft="452.031249988359,804.307018522571" />
         <NodeLayout
           Size="279,42"
           Id="Package\Create Stagging Tables If they don't exist"
@@ -12867,93 +12747,6 @@ where [refTable].[guid] = ?</property>
           Size="285,42"
           Id="Package\DFT Retrieve Marketing Slides Sharepoint"
           TopLeft="412.124999916181,88.1315789216113" />
-        <NodeLayout
-          Size="221,42"
-          Id="Package\Foreach rsDeleteSlides\Delete Slide Image from Disk"
-          TopLeft="60,90" />
-        <NodeLayout
-          Size="160,42"
-          Id="Package\Foreach rsDeleteSlides\Expression Task"
-          TopLeft="58,10" />
-        <NodeLayout
-          Size="292,42"
-          Id="Package\Foreach rsDeleteSlides\Remove Slides Image Data for delete slides"
-          TopLeft="36,182" />
-        <EdgeLayout
-          Id="Package\Foreach rsDeleteSlides.PrecedenceConstraints[Constraint]"
-          TopLeft="170.5,132">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="11.5,50"
-              Start="0,0"
-              End="11.5,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21"
-                    Point2="0,25"
-                    Point3="4,25" />
-                  <mssgle:LineSegment
-                    End="7.5,25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7.5,25"
-                    Point2="11.5,25"
-                    Point3="11.5,29" />
-                  <mssgle:LineSegment
-                    End="11.5,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Foreach rsDeleteSlides.PrecedenceConstraints[Constraint 1]"
-          TopLeft="138,52">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="32.5,38"
-              Start="0,0"
-              End="32.5,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15"
-                    Point2="0,19"
-                    Point3="4,19" />
-                  <mssgle:LineSegment
-                    End="28.5,19" />
-                  <mssgle:CubicBezierSegment
-                    Point1="28.5,19"
-                    Point2="32.5,19"
-                    Point3="32.5,23" />
-                  <mssgle:LineSegment
-                    End="32.5,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="333,279"
-          Size="333,322"
-          Id="Package\Foreach rsDeleteSlides"
-          TopLeft="1291,815" />
         <NodeLayout
           Size="153,42"
           Id="Package\Foreach Slide Image\Retrieve Slides"
@@ -13023,33 +12816,11 @@ where [refTable].[guid] = ?</property>
         <NodeLayout
           Size="194,42"
           Id="Package\Remove Deleted Slides"
-          TopLeft="1759,961" />
+          TopLeft="1110,966.416666639762" />
         <NodeLayout
           Size="147,42"
           Id="Package\Update Slides"
-          TopLeft="468.37500002794,802.144736520141" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="542.369791674816,844.144736520141">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,111.82894791576"
-              Start="0,0"
-              End="0,104.32894791576">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,104.32894791576" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="479.87500002794,958.144735745281" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="539.333333333333,225.093567483277">
@@ -13098,28 +12869,6 @@ where [refTable].[guid] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,39.673982017184" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="538.895833347304,732.694444444444">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,69.450292075697"
-              Start="0,0"
-              End="0,61.950292075697">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,61.950292075697" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13219,19 +12968,53 @@ where [refTable].[guid] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="1624,979">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="532.473958327513,732.694444444444">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="135,0"
+              EndConnector="0,71.6125740781267"
               Start="0,0"
-              End="127.5,0">
+              End="0,64.1125740781267">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="127.5,0" />
+                    End="0,64.1125740781267" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="529.031249988359,846.307018522571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.3437500395811,111.83771722271"
+              Start="0,0"
+              End="24.3437500395811,104.33771722271">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.918858611355" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.918858611355"
+                    Point2="0,55.918858611355"
+                    Point3="4,55.918858611355" />
+                  <mssgle:LineSegment
+                    End="20.3437500395811,55.918858611355" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.3437500395811,55.918858611355"
+                    Point2="24.3437500395811,55.918858611355"
+                    Point3="24.3437500395811,59.918858611355" />
+                  <mssgle:LineSegment
+                    End="24.3437500395811,104.33771722271" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13242,30 +13025,30 @@ where [refTable].[guid] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="620.031249988359,976.973684435901">
+          TopLeft="626.87500002794,979.144735745281">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="127.877965703119,8.71116083242055"
+              EndConnector="121.034215663537,8.87344285637425"
               Start="0,0"
-              End="120.377965703119,8.71116083242055">
+              End="113.534215663537,8.87344285637425">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="59.9389828515593,0" />
+                    End="56.5171078317685,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="59.9389828515593,0"
-                    Point2="63.9389828515593,0"
-                    Point3="63.9389828515593,4" />
+                    Point1="56.5171078317685,0"
+                    Point2="60.5171078317685,0"
+                    Point3="60.5171078317685,4" />
                   <mssgle:LineSegment
-                    End="63.9389828515593,4.71116083242055" />
+                    End="60.5171078317685,4.87344285637425" />
                   <mssgle:CubicBezierSegment
-                    Point1="63.9389828515593,4.71116083242055"
-                    Point2="63.9389828515593,8.71116083242055"
-                    Point3="67.9389828515593,8.71116083242055" />
+                    Point1="60.5171078317685,4.87344285637425"
+                    Point2="60.5171078317685,8.87344285637425"
+                    Point3="64.5171078317685,8.87344285637425" />
                   <mssgle:LineSegment
-                    End="120.377965703119,8.71116083242055" />
+                    End="113.534215663537,8.87344285637425" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13275,31 +13058,19 @@ where [refTable].[guid] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="952.909215691477,988.018178601655">
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="952.909215691477,987.717422620708">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="338.090784308523,-12.018178601655"
+              EndConnector="157.090784308523,0"
               Start="0,0"
-              End="330.590784308523,-12.018178601655">
+              End="149.590784308523,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="165.045392154261,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="165.045392154261,0"
-                    Point2="169.045392154261,0"
-                    Point3="169.045392154261,-4" />
-                  <mssgle:LineSegment
-                    End="169.045392154261,-8.018178601655" />
-                  <mssgle:CubicBezierSegment
-                    Point1="169.045392154261,-8.018178601655"
-                    Point2="169.045392154261,-12.018178601655"
-                    Point3="173.045392154261,-12.018178601655" />
-                  <mssgle:LineSegment
-                    End="330.590784308523,-12.018178601655" />
+                    End="149.590784308523,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
