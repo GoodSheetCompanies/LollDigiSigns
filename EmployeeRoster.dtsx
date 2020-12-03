@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="EmployeeRoster"
   DTS:PackageType="5"
-  DTS:VersionBuild="220"
-  DTS:VersionGUID="{6D26C0CD-1958-4ADE-802B-E02EFD1044D8}">
+  DTS:VersionBuild="221"
+  DTS:VersionGUID="{B5F33A64-1A54-4D43-A9E8-89D3FA0E32DA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -539,7 +539,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA85IDhnTGNkqurTbPQCEsXwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAvzCSHvNUh1qpgRm7ckUw9AAAAAASAAACgAAAAEAAAAPuSkeI6+g2EOEAjL2rnmio4AAAAS3UKxYW2Cy84rksBR27VmnLrfSHYL0AzgfOqRTfgSSzjebc7p35jTerye9EgRlFzkOfZ05hzc1kUAAAAevRuhGzF1ViWlTK0V9Yktzxpn/M</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA85IDhnTGNkqurTbPQCEsXwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADDmfmc6Cn0nAUSnLvMt+0BAAAAAASAAACgAAAAEAAAAAWdZqk6IMme6bXh2AtBoUk4AAAAVYy5yN6YFdGsyMq05frgAmIcGBbih0IblhOL/xzj0U/yzItuDqmscdXSHGvSL5ZVAxHoZ4QDFDgUAAAABiBKamf4969J2cWC/qwRhmeLQnA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -554,7 +554,7 @@
           ConnectByProxy="False">
           <Password
             Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA85IDhnTGNkqurTbPQCEsXwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAt6AJTyFe72wjm2DoI06WzAAAAAASAAACgAAAAEAAAAJHhsHVnQ3BGtmjt8YsC8A0oAAAAW55Jv4TXd2tVAWRlL0OGU82GAFFaDCq9vKttYEvvvFhBRsDKNOt0JRQAAAA82KU49/+7O9Vms+Ai4GuabyvLFA</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA85IDhnTGNkqurTbPQCEsXwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABL85dc2Avb5r3d/ZfypZpMAAAAAASAAACgAAAAEAAAADk58kDSAzKz7UYIZIIRiZMoAAAA8HtvJg8XSKKebT6dUroTkyr87zdHLtXHhI2k8F3AJop6LJIpSLXsVBQAAACsdyhv1Y5XK+KGkl8AsV2/ACv7Wg</Password>
         </SharePointConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2647,7 +2647,7 @@ where [refTable].[GUID] = ?</property>
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">!ISNULL([SharePoint Source].HeadShot)</property>
+                      name="FriendlyExpression">!ISNULL(HeadShot)</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -2675,7 +2675,7 @@ where [refTable].[GUID] = ?</property>
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">ISNULL([SharePoint Source].HeadShot) &amp;&amp; !ISNULL(Lookup.HeadShot)</property>
+                      name="FriendlyExpression">ISNULL(HeadShot) &amp;&amp; !ISNULL(HeadShotOld)</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -14199,7 +14199,7 @@ where [refTable].[guid] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Cache Deletions\Retrieve tblEmployees">
+    design-time-name="Package\Cache Deletions\Stage Deletes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14222,7 +14222,7 @@ where [refTable].[guid] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Cache Deletions\Stage Deletes">
+    design-time-name="Package\Cache Deletions\Retrieve tblEmployees">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14302,9 +14302,7 @@ where [refTable].[guid] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14326,9 +14324,7 @@ where [refTable].[guid] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14458,9 +14454,7 @@ where [refTable].[guid] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14494,9 +14488,7 @@ where [refTable].[guid] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
