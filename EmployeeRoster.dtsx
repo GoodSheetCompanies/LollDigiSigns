@@ -8,12 +8,12 @@
   DTS:DelayValidation="True"
   DTS:DTSID="{FA3BAF3C-63ED-42BA-A089-DAF9FA3E6475}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LastModifiedProductVersion="15.0.2000.152"
   DTS:LocaleID="1033"
   DTS:ObjectName="EmployeeRoster"
   DTS:PackageType="5"
-  DTS:VersionBuild="221"
-  DTS:VersionGUID="{B5F33A64-1A54-4D43-A9E8-89D3FA0E32DA}">
+  DTS:VersionBuild="222"
+  DTS:VersionGUID="{D83116B1-F725-4DE5-811C-7FECB133080E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -539,7 +539,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA85IDhnTGNkqurTbPQCEsXwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADDmfmc6Cn0nAUSnLvMt+0BAAAAAASAAACgAAAAEAAAAAWdZqk6IMme6bXh2AtBoUk4AAAAVYy5yN6YFdGsyMq05frgAmIcGBbih0IblhOL/xzj0U/yzItuDqmscdXSHGvSL5ZVAxHoZ4QDFDgUAAAABiBKamf4969J2cWC/qwRhmeLQnA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAORvdOwLv2EKZ2w1RKrQyLAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAADrG85VMgUt31b+lOFNYA+BAAAAAASAAACgAAAAEAAAAIk5RvgzqfuLaA6eabKYwUE4AAAAwDeAMxeCIhZXqbJHNPurR9Dx21JN9HYAdaZiGssSJQfALU2ev2oUkCSIU5roPxCv05ycMWsVY/8UAAAAY3/30SGSMsX/Gy9m705bPKlAcqw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -550,11 +550,11 @@
       DTS:ObjectName="SharePoint Connection Manager">
       <DTS:ObjectData>
         <SharePointConnectionManager
-          ConnectionString="ServiceUrl=https://goodsheetco.sharepoint.com/sites/lolldesigns;UserName=thanos@goodsheetco.onmicrosoft.com;Domain=;ProxyUsername=;HomeRealmUri=;AuthenticationCookieName=;ProxyMode=NoProxy;ProxyServer=;ProxyServerPort=0;ServiceTimeout=120;AuthenticationType=OnlineFederation;RetryOnIntermittentErrors=True;MultiAuthenticationSite=False;IgnoreCertificateErrors=False"
+          ConnectionString="ServiceUrl=https://landscapeforms.sharepoint.com/sites/lollDesignsLF;UserName=loki@landscapeforms.onmicrosoft.com;Domain=;ProxyUsername=;HomeRealmUri=;AuthenticationCookieName=;ProxyMode=NoProxy;ProxyServer=;ProxyServerPort=0;ServiceTimeout=120;AuthenticationType=OnlineFederation;RetryOnIntermittentErrors=True;MultiAuthenticationSite=False;IgnoreCertificateErrors=False"
           ConnectByProxy="False">
           <Password
             Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA85IDhnTGNkqurTbPQCEsXwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABL85dc2Avb5r3d/ZfypZpMAAAAAASAAACgAAAAEAAAADk58kDSAzKz7UYIZIIRiZMoAAAA8HtvJg8XSKKebT6dUroTkyr87zdHLtXHhI2k8F3AJop6LJIpSLXsVBQAAACsdyhv1Y5XK+KGkl8AsV2/ACv7Wg</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAORvdOwLv2EKZ2w1RKrQyLAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACRr23zzdT0Zqb92KZ0LNXYAAAAAASAAACgAAAAEAAAACVYejENNvl+eg/rld4nCg8oAAAARoFxssie/RQVr5mI89rB4W0KloU/juAGqMrzv4F9GWTS68d4PnXVqBQAAADh8QVmrkXRJ33U3gvddPUj5+z26g</Password>
         </SharePointConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -14598,7 +14598,7 @@ where [refTable].[guid] = ?</property>
     design-time-name="Package\DFT Retrieve Sharepoint List Employees">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
           Id="Package\DFT Retrieve Sharepoint List Employees\SharePoint Source"
@@ -14630,9 +14630,7 @@ where [refTable].[guid] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14654,9 +14652,7 @@ where [refTable].[guid] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

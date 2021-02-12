@@ -8,12 +8,12 @@
   DTS:DelayValidation="True"
   DTS:DTSID="{4A6732B0-834D-4FBD-AD7D-57E5A446DAB2}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LastModifiedProductVersion="15.0.2000.152"
   DTS:LocaleID="1033"
   DTS:ObjectName="MarketingSlides"
   DTS:PackageType="5"
-  DTS:VersionBuild="243"
-  DTS:VersionGUID="{2E67F40D-154F-4028-8326-BB3D2DEDE29A}">
+  DTS:VersionBuild="246"
+  DTS:VersionGUID="{85C7F876-EF52-4E56-B862-93FDABAA9F30}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -838,7 +838,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA85IDhnTGNkqurTbPQCEsXwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAIT5ZKdEImg3QEBQqB9Nh8AAAAAASAAACgAAAAEAAAADgbKLEvZGgPn+QnKMixN2M4AAAAwV2QL4eAw8sQ7s8E9ckfldSJk8+5bDbeXh5voWNFOsIuZ1XCuyG+fLH95by/DldNX60DEFkrMS0UAAAAN4TZ3oftI2ORw99f6ZPuKPkdvuc</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAORvdOwLv2EKZ2w1RKrQyLAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABHtZBYhx5cQvbncDwxqy97AAAAAASAAACgAAAAEAAAAIm5fVX2pC7XZ9FAOA+YMVM4AAAAbKNtqE02KnVdPyKG1n6oHgHXRtizY6dMyphfhMZwG9bpJGrpnfzJCQCEJW8uElvvTdqHUP6Cg2UUAAAA5Qh40laQ1riAAeu10uMzEnWpdc0</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -849,11 +849,11 @@
       DTS:ObjectName="SharePoint Connection Manager">
       <DTS:ObjectData>
         <SharePointConnectionManager
-          ConnectionString="ServiceUrl=https://goodsheetco.sharepoint.com/sites/lolldesigns;UserName=thanos@goodsheetco.onmicrosoft.com;Domain=;ProxyUsername=;HomeRealmUri=;AuthenticationCookieName=;ProxyMode=NoProxy;ProxyServer=;ProxyServerPort=0;ServiceTimeout=120;AuthenticationType=OnlineFederation;RetryOnIntermittentErrors=True;MultiAuthenticationSite=False;IgnoreCertificateErrors=False"
+          ConnectionString="ServiceUrl=https://landscapeforms.sharepoint.com/sites/lollDesignsLF;UserName=loki@landscapeforms.onmicrosoft.com;Domain=;ProxyUsername=;HomeRealmUri=;AuthenticationCookieName=;ProxyMode=NoProxy;ProxyServer=;ProxyServerPort=0;ServiceTimeout=120;AuthenticationType=OnlineFederation;RetryOnIntermittentErrors=True;MultiAuthenticationSite=False;IgnoreCertificateErrors=False"
           ConnectByProxy="False">
           <Password
             Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA85IDhnTGNkqurTbPQCEsXwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA2/F8eaoT5Xn5M60vZ+qY9AAAAAASAAACgAAAAEAAAAFK/zPAYEYYUQt3rMwi0SZUoAAAA3IPawIHrc+hSjcJIyrmz4LudZzo6jreT7uXBMAOTYxkcZsuI0qo3NhQAAAApqXNcRXDfwa/GNVfeWjiF1yGLpA</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAORvdOwLv2EKZ2w1RKrQyLAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABQ8qyBz/BErR5iq5zKzAGfAAAAAASAAACgAAAAEAAAAJwZkOkGHvWaOpxLdhBt8p0oAAAA+UJRRMOcEANkH1dSZjvvCrytE+4hxYeANU3mopvHMTcJnfm5/erC/xQAAADeq5z3WWw6X+9C6vfHVlqtV0IDeg</Password>
         </SharePointConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -10842,17 +10842,17 @@ where [refTable].[guid] = ?</property>
                       externalMetadataColumnId="Package\Get or Update Slides\Insert New Slide.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
                       lineageId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].Columns[Title]" />
                     <inputColumn
-                      refId="Package\Get or Update Slides\Insert New Slide.Inputs[OLE DB Destination Input].Columns[SlidePriority]"
-                      cachedDataType="decimal"
-                      cachedName="SlidePriority"
-                      externalMetadataColumnId="Package\Get or Update Slides\Insert New Slide.Inputs[OLE DB Destination Input].ExternalColumns[Priority]"
-                      lineageId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].Columns[SlidePriority]" />
-                    <inputColumn
                       refId="Package\Get or Update Slides\Insert New Slide.Inputs[OLE DB Destination Input].Columns[Modified]"
                       cachedDataType="dbTimeStamp"
                       cachedName="Modified"
                       externalMetadataColumnId="Package\Get or Update Slides\Insert New Slide.Inputs[OLE DB Destination Input].ExternalColumns[DateModified]"
                       lineageId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].Columns[Modified]" />
+                    <inputColumn
+                      refId="Package\Get or Update Slides\Insert New Slide.Inputs[OLE DB Destination Input].Columns[Slide_x0020_Priority]"
+                      cachedDataType="decimal"
+                      cachedName="Slide_x0020_Priority"
+                      externalMetadataColumnId="Package\Get or Update Slides\Insert New Slide.Inputs[OLE DB Destination Input].ExternalColumns[Priority]"
+                      lineageId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].Columns[Slide_x0020_Priority]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -10878,6 +10878,10 @@ where [refTable].[guid] = ?</property>
                       refId="Package\Get or Update Slides\Insert New Slide.Inputs[OLE DB Destination Input].ExternalColumns[DateModified]"
                       dataType="dbTimeStamp"
                       name="DateModified" />
+                    <externalMetadataColumn
+                      refId="Package\Get or Update Slides\Insert New Slide.Inputs[OLE DB Destination Input].ExternalColumns[ImageModified]"
+                      dataType="dbTimeStamp"
+                      name="ImageModified" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -11845,25 +11849,25 @@ where [refTable].[guid] = ?</property>
                       name="WorkflowVersion"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].Columns[MarketingSlide]"
+                      refId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].Columns[Slide]"
                       dataType="wstr"
                       description="Slide"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].ExternalColumns[MarketingSlide]"
+                      externalMetadataColumnId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].ExternalColumns[Slide]"
                       length="4000"
-                      lineageId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].Columns[MarketingSlide]"
-                      name="MarketingSlide"
+                      lineageId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].Columns[Slide]"
+                      name="Slide"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].Columns[SlidePriority]"
+                      refId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].Columns[Slide_x0020_Priority]"
                       dataType="decimal"
                       description="Slide Priority"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].ExternalColumns[SlidePriority]"
-                      lineageId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].Columns[SlidePriority]"
-                      name="SlidePriority"
+                      externalMetadataColumnId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].ExternalColumns[Slide_x0020_Priority]"
+                      lineageId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].Columns[Slide_x0020_Priority]"
+                      name="Slide_x0020_Priority"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -12329,16 +12333,16 @@ where [refTable].[guid] = ?</property>
                       description="Workflow Version"
                       name="WorkflowVersion" />
                     <externalMetadataColumn
-                      refId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].ExternalColumns[MarketingSlide]"
+                      refId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].ExternalColumns[Slide]"
                       dataType="wstr"
                       description="Slide"
                       length="4000"
-                      name="MarketingSlide" />
+                      name="Slide" />
                     <externalMetadataColumn
-                      refId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].ExternalColumns[SlidePriority]"
+                      refId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].ExternalColumns[Slide_x0020_Priority]"
                       dataType="decimal"
                       description="Slide Priority"
-                      name="SlidePriority" />
+                      name="Slide_x0020_Priority" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -12429,17 +12433,17 @@ where [refTable].[guid] = ?</property>
                       externalMetadataColumnId="Package\Get or Update Slides\Stage Slide Updates.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
                       lineageId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].Columns[Title]" />
                     <inputColumn
-                      refId="Package\Get or Update Slides\Stage Slide Updates.Inputs[OLE DB Destination Input].Columns[SlidePriority]"
-                      cachedDataType="decimal"
-                      cachedName="SlidePriority"
-                      externalMetadataColumnId="Package\Get or Update Slides\Stage Slide Updates.Inputs[OLE DB Destination Input].ExternalColumns[Priority]"
-                      lineageId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].Columns[SlidePriority]" />
-                    <inputColumn
                       refId="Package\Get or Update Slides\Stage Slide Updates.Inputs[OLE DB Destination Input].Columns[Modified]"
                       cachedDataType="dbTimeStamp"
                       cachedName="Modified"
                       externalMetadataColumnId="Package\Get or Update Slides\Stage Slide Updates.Inputs[OLE DB Destination Input].ExternalColumns[DateModified]"
                       lineageId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].Columns[Modified]" />
+                    <inputColumn
+                      refId="Package\Get or Update Slides\Stage Slide Updates.Inputs[OLE DB Destination Input].Columns[Slide_x0020_Priority]"
+                      cachedDataType="decimal"
+                      cachedName="Slide_x0020_Priority"
+                      externalMetadataColumnId="Package\Get or Update Slides\Stage Slide Updates.Inputs[OLE DB Destination Input].ExternalColumns[Priority]"
+                      lineageId="Package\Get or Update Slides\Retrieve Slide List.Outputs[Primary Output].Columns[Slide_x0020_Priority]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -12465,6 +12469,10 @@ where [refTable].[guid] = ?</property>
                       refId="Package\Get or Update Slides\Stage Slide Updates.Inputs[OLE DB Destination Input].ExternalColumns[DateModified]"
                       dataType="dbTimeStamp"
                       name="DateModified" />
+                    <externalMetadataColumn
+                      refId="Package\Get or Update Slides\Stage Slide Updates.Inputs[OLE DB Destination Input].ExternalColumns[ImageModified]"
+                      dataType="dbTimeStamp"
+                      name="ImageModified" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -12600,8 +12608,8 @@ where [refTable].[guid] = ?</property>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{AD574534-B27B-4BF3-AC40-32AB05608D3A}"
-          DTS:ObjectName="{AD574534-B27B-4BF3-AC40-32AB05608D3A}"
+          DTS:DTSID="{C39A1CF4-67E3-4105-9179-E0709DFB44F3}"
+          DTS:ObjectName="{C39A1CF4-67E3-4105-9179-E0709DFB44F3}"
           DTS:ValueIndex="1"
           DTS:VariableName="User::varFileName" />
       </DTS:ForEachVariableMappings>
@@ -12822,6 +12830,28 @@ where [refTable].[guid] = ?</property>
           Id="Package\Update Slides"
           TopLeft="479.87500002794,958.144735745281" />
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="532.473958327513,732.694444444444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71.6125740781267"
+              Start="0,0"
+              End="0,64.1125740781267">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.1125740781267" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="539.333333333333,225.093567483277">
           <EdgeLayout.Curve>
@@ -12869,6 +12899,40 @@ where [refTable].[guid] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,39.673982017184" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="529.031249988359,846.307018522571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.3437500395811,111.83771722271"
+              Start="0,0"
+              End="24.3437500395811,104.33771722271">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.918858611355" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.918858611355"
+                    Point2="0,55.918858611355"
+                    Point3="4,55.918858611355" />
+                  <mssgle:LineSegment
+                    End="20.3437500395811,55.918858611355" />
+                  <mssgle:CubicBezierSegment
+                    Point1="20.3437500395811,55.918858611355"
+                    Point2="24.3437500395811,55.918858611355"
+                    Point3="24.3437500395811,59.918858611355" />
+                  <mssgle:LineSegment
+                    End="24.3437500395811,104.33771722271" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12968,53 +13032,19 @@ where [refTable].[guid] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="532.473958327513,732.694444444444">
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="952.909215691477,987.717422620708">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,71.6125740781267"
+              EndConnector="157.090784308523,0"
               Start="0,0"
-              End="0,64.1125740781267">
+              End="149.590784308523,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,64.1125740781267" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="529.031249988359,846.307018522571">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="24.3437500395811,111.83771722271"
-              Start="0,0"
-              End="24.3437500395811,104.33771722271">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.918858611355" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,51.918858611355"
-                    Point2="0,55.918858611355"
-                    Point3="4,55.918858611355" />
-                  <mssgle:LineSegment
-                    End="20.3437500395811,55.918858611355" />
-                  <mssgle:CubicBezierSegment
-                    Point1="20.3437500395811,55.918858611355"
-                    Point2="24.3437500395811,55.918858611355"
-                    Point3="24.3437500395811,59.918858611355" />
-                  <mssgle:LineSegment
-                    End="24.3437500395811,104.33771722271" />
+                    End="149.590784308523,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13049,28 +13079,6 @@ where [refTable].[guid] = ?</property>
                     Point3="64.5171078317685,8.87344285637425" />
                   <mssgle:LineSegment
                     End="113.534215663537,8.87344285637425" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="952.909215691477,987.717422620708">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="157.090784308523,0"
-              Start="0,0"
-              End="149.590784308523,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="149.590784308523,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13734,7 +13742,9 @@ where [refTable].[guid] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13768,7 +13778,9 @@ where [refTable].[guid] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13802,7 +13814,9 @@ where [refTable].[guid] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13836,7 +13850,9 @@ where [refTable].[guid] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13870,7 +13886,9 @@ where [refTable].[guid] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13901,30 +13919,6 @@ where [refTable].[guid] = ?</property>
           Size="168,42"
           Id="Package\Get or Update Slides\Retrieve Slide List"
           TopLeft="470,22" />
-        <EdgeLayout
-          Id="Package\Get or Update Slides.Paths[Primary Output]"
-          TopLeft="552.75,64">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,131"
-              Start="0,0"
-              End="0,123.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,123.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Get or Update Slides.Paths[Lookup No Match Output]"
           TopLeft="533.666666666667,237">
@@ -13957,7 +13951,7 @@ where [refTable].[guid] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-262.889720052083,83.3807890222984,111.6127734375,11.609375"
+              BoundingBox="-271.758372395833,83.3807890222984,129.350078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -13993,7 +13987,7 @@ where [refTable].[guid] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="57.8919466145833,45.4150943396226,96.3827734375,11.609375"
+              BoundingBox="57.8919466145835,45.4150943396226,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14031,6 +14025,28 @@ where [refTable].[guid] = ?</property>
             <mssgm:EdgeLabel
               BoundingBox="70.15806640625,29.5,37.6838671875,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get or Update Slides.Paths[Primary Output]"
+          TopLeft="552.75,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,131"
+              Start="0,0"
+              End="0,123.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,123.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
