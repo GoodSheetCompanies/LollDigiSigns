@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MarketingSlides"
   DTS:PackageType="5"
-  DTS:VersionBuild="246"
-  DTS:VersionGUID="{85C7F876-EF52-4E56-B862-93FDABAA9F30}">
+  DTS:VersionBuild="277"
+  DTS:VersionGUID="{FB7A5C1E-4A0F-46F4-9968-9B04ED978672}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -838,7 +838,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAORvdOwLv2EKZ2w1RKrQyLAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABHtZBYhx5cQvbncDwxqy97AAAAAASAAACgAAAAEAAAAIm5fVX2pC7XZ9FAOA+YMVM4AAAAbKNtqE02KnVdPyKG1n6oHgHXRtizY6dMyphfhMZwG9bpJGrpnfzJCQCEJW8uElvvTdqHUP6Cg2UUAAAA5Qh40laQ1riAAeu10uMzEnWpdc0</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMa2dUlx7FUGuvVfesPSL5gAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACkBq319MBklY1VcVux74+RAAAAAASAAACgAAAAEAAAALxcUfLTtcbRHVGi/q3KAjc4AAAAnTQ2ad58YBes1Shy2XTiH413bfDGfka0YXL9Oinv2xQjY2nuGn9W4pU+wsVJmlqyGhR+dfZwIksUAAAA5AfuyQJLAGI59E6/aqvzCGxd1Ck</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -853,7 +853,7 @@
           ConnectByProxy="False">
           <Password
             Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAORvdOwLv2EKZ2w1RKrQyLAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABQ8qyBz/BErR5iq5zKzAGfAAAAAASAAACgAAAAEAAAAJwZkOkGHvWaOpxLdhBt8p0oAAAA+UJRRMOcEANkH1dSZjvvCrytE+4hxYeANU3mopvHMTcJnfm5/erC/xQAAADeq5z3WWw6X+9C6vfHVlqtV0IDeg</Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMa2dUlx7FUGuvVfesPSL5gAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAB4SVPq1q5MwZ69p2moxcwYAAAAAASAAACgAAAAEAAAAMsrtYtfHaWpOXrJa8m1BeUoAAAAF9xGXElywbpp5wRgm+pL8r83BWNrsl9bUPo596z2laKw5a4qtJ2jrBQAAABpdQZVrPah70ItJZfbZZypCzOzJQ</Password>
         </SharePointConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1680,17 +1680,17 @@ where [refTable].[GUID] = ?</property>
                   name="Conditional Split Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Create rsSlides\FileName Record Exists?.Inputs[Conditional Split Input].Columns[MarketingSlide]"
-                      cachedDataType="wstr"
-                      cachedLength="4000"
-                      cachedName="MarketingSlide"
-                      lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[MarketingSlide]" />
-                    <inputColumn
                       refId="Package\Create rsSlides\FileName Record Exists?.Inputs[Conditional Split Input].Columns[oldFileName]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="oldFileName"
                       lineageId="Package\Create rsSlides\Match Current Slides with Sharepoint.Outputs[Lookup Match Output].Columns[oldFileName]" />
+                    <inputColumn
+                      refId="Package\Create rsSlides\FileName Record Exists?.Inputs[Conditional Split Input].Columns[Slide]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="Slide"
+                      lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[Slide]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1710,13 +1710,13 @@ where [refTable].[GUID] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">![ISNULL](#{Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[MarketingSlide]})</property>
+                      name="Expression">![ISNULL](#{Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[Slide]})</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">!ISNULL(MarketingSlide)</property>
+                      name="FriendlyExpression">!ISNULL(Slide)</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -1738,13 +1738,13 @@ where [refTable].[GUID] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">[ISNULL](#{Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[MarketingSlide]}) &amp;&amp; ![ISNULL](#{Package\Create rsSlides\Match Current Slides with Sharepoint.Outputs[Lookup Match Output].Columns[oldFileName]})</property>
+                      name="Expression">[ISNULL](#{Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[Slide]}) &amp;&amp; ![ISNULL](#{Package\Create rsSlides\Match Current Slides with Sharepoint.Outputs[Lookup Match Output].Columns[oldFileName]})</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">ISNULL(MarketingSlide) &amp;&amp; !ISNULL(oldFileName)</property>
+                      name="FriendlyExpression">ISNULL(Slide) &amp;&amp; !ISNULL(oldFileName)</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -1807,7 +1807,7 @@ where [refTable].[GUID] = ?</property>
                   dataType="System.Int32"
                   description="Specifies the input column that contains the document to extract."
                   expressionType="Notify"
-                  name="DocumentInputColumn">#{Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[MarketingSlide]}</property>
+                  name="DocumentInputColumn">#{Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[Slide]}</property>
                 <property
                   dataType="System.String"
                   description="Specifies the text qualifier to use when merging repeated values."
@@ -2099,6 +2099,11 @@ where [refTable].[GUID] = ?</property>
                       cachedName="FSObjType"
                       lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[FSObjType]" />
                     <inputColumn
+                      refId="Package\Create rsSlides\JSON Extract.Inputs[PrimaryInput].Columns[GUID]"
+                      cachedDataType="guid"
+                      cachedName="GUID"
+                      lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[GUID]" />
+                    <inputColumn
                       refId="Package\Create rsSlides\JSON Extract.Inputs[PrimaryInput].Columns[HTML_x0020_File_x0020_Type]"
                       cachedDataType="wstr"
                       cachedLength="4000"
@@ -2162,12 +2167,6 @@ where [refTable].[GUID] = ?</property>
                       cachedLength="4000"
                       cachedName="LinkTitleNoMenu"
                       lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[LinkTitleNoMenu]" />
-                    <inputColumn
-                      refId="Package\Create rsSlides\JSON Extract.Inputs[PrimaryInput].Columns[MarketingSlide]"
-                      cachedDataType="wstr"
-                      cachedLength="4000"
-                      cachedName="MarketingSlide"
-                      lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[MarketingSlide]" />
                     <inputColumn
                       refId="Package\Create rsSlides\JSON Extract.Inputs[PrimaryInput].Columns[MetaInfo]"
                       cachedDataType="wstr"
@@ -2244,11 +2243,6 @@ where [refTable].[GUID] = ?</property>
                       cachedName="ServerUrl"
                       lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[ServerUrl]" />
                     <inputColumn
-                      refId="Package\Create rsSlides\JSON Extract.Inputs[PrimaryInput].Columns[SlidePriority]"
-                      cachedDataType="decimal"
-                      cachedName="SlidePriority"
-                      lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[SlidePriority]" />
-                    <inputColumn
                       refId="Package\Create rsSlides\JSON Extract.Inputs[PrimaryInput].Columns[SMLastModifiedDate]"
                       cachedDataType="wstr"
                       cachedLength="4000"
@@ -2313,6 +2307,22 @@ where [refTable].[GUID] = ?</property>
                       cachedName="WorkflowVersion"
                       lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[WorkflowVersion]" />
                     <inputColumn
+                      refId="Package\Create rsSlides\JSON Extract.Inputs[PrimaryInput].Columns[Slide]"
+                      cachedDataType="wstr"
+                      cachedLength="4000"
+                      cachedName="Slide"
+                      lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[Slide]" />
+                    <inputColumn
+                      refId="Package\Create rsSlides\JSON Extract.Inputs[PrimaryInput].Columns[Slide_x0020_Priority]"
+                      cachedDataType="decimal"
+                      cachedName="Slide_x0020_Priority"
+                      lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[Slide_x0020_Priority]" />
+                    <inputColumn
+                      refId="Package\Create rsSlides\JSON Extract.Inputs[PrimaryInput].Columns[guid]"
+                      cachedDataType="guid"
+                      cachedName="guid"
+                      lineageId="Package\Create rsSlides\Match Current Slides with Sharepoint.Outputs[Lookup Match Output].Columns[guid]" />
+                    <inputColumn
                       refId="Package\Create rsSlides\JSON Extract.Inputs[PrimaryInput].Columns[oldFileName]"
                       cachedDataType="wstr"
                       cachedLength="100"
@@ -2323,16 +2333,6 @@ where [refTable].[GUID] = ?</property>
                       cachedDataType="dbTimeStamp"
                       cachedName="ImageModified"
                       lineageId="Package\Create rsSlides\Match Current Slides with Sharepoint.Outputs[Lookup Match Output].Columns[ImageModified]" />
-                    <inputColumn
-                      refId="Package\Create rsSlides\JSON Extract.Inputs[PrimaryInput].Columns[GUID]"
-                      cachedDataType="guid"
-                      cachedName="GUID"
-                      lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[GUID]" />
-                    <inputColumn
-                      refId="Package\Create rsSlides\JSON Extract.Inputs[PrimaryInput].Columns[guid]"
-                      cachedDataType="guid"
-                      cachedName="guid"
-                      lineageId="Package\Create rsSlides\Match Current Slides with Sharepoint.Outputs[Lookup Match Output].Columns[guid]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True" />
@@ -2752,13 +2752,6 @@ where [refTable].[GUID] = ?</property>
                       lineageId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].Columns[_upstream.LinkTitleNoMenu]"
                       name="_upstream.LinkTitleNoMenu" />
                     <outputColumn
-                      refId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].Columns[_upstream.MarketingSlide]"
-                      dataType="wstr"
-                      externalMetadataColumnId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].ExternalColumns[_upstream.MarketingSlide]"
-                      length="4000"
-                      lineageId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].Columns[_upstream.MarketingSlide]"
-                      name="_upstream.MarketingSlide" />
-                    <outputColumn
                       refId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].Columns[_upstream.MetaInfo]"
                       dataType="wstr"
                       externalMetadataColumnId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].ExternalColumns[_upstream.MetaInfo]"
@@ -2847,12 +2840,6 @@ where [refTable].[GUID] = ?</property>
                       lineageId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].Columns[_upstream.ServerUrl]"
                       name="_upstream.ServerUrl" />
                     <outputColumn
-                      refId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].Columns[_upstream.SlidePriority]"
-                      dataType="decimal"
-                      externalMetadataColumnId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].ExternalColumns[_upstream.SlidePriority]"
-                      lineageId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].Columns[_upstream.SlidePriority]"
-                      name="_upstream.SlidePriority" />
-                    <outputColumn
                       refId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].Columns[_upstream.SMLastModifiedDate]"
                       dataType="wstr"
                       externalMetadataColumnId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].ExternalColumns[_upstream.SMLastModifiedDate]"
@@ -2927,6 +2914,19 @@ where [refTable].[GUID] = ?</property>
                       externalMetadataColumnId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].ExternalColumns[_upstream.WorkflowVersion]"
                       lineageId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].Columns[_upstream.WorkflowVersion]"
                       name="_upstream.WorkflowVersion" />
+                    <outputColumn
+                      refId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].Columns[_upstream.Slide]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].ExternalColumns[_upstream.Slide]"
+                      length="4000"
+                      lineageId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].Columns[_upstream.Slide]"
+                      name="_upstream.Slide" />
+                    <outputColumn
+                      refId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].Columns[_upstream.Slide_x0020_Priority]"
+                      dataType="decimal"
+                      externalMetadataColumnId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].ExternalColumns[_upstream.Slide_x0020_Priority]"
+                      lineageId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].Columns[_upstream.Slide_x0020_Priority]"
+                      name="_upstream.Slide_x0020_Priority" />
                     <outputColumn
                       refId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].Columns[_upstream.guid]"
                       dataType="guid"
@@ -3215,11 +3215,6 @@ where [refTable].[GUID] = ?</property>
                       length="4000"
                       name="_upstream.LinkTitleNoMenu" />
                     <externalMetadataColumn
-                      refId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].ExternalColumns[_upstream.MarketingSlide]"
-                      dataType="wstr"
-                      length="4000"
-                      name="_upstream.MarketingSlide" />
-                    <externalMetadataColumn
                       refId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].ExternalColumns[_upstream.MetaInfo]"
                       dataType="wstr"
                       length="4000"
@@ -3282,10 +3277,6 @@ where [refTable].[GUID] = ?</property>
                       length="4000"
                       name="_upstream.ServerUrl" />
                     <externalMetadataColumn
-                      refId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].ExternalColumns[_upstream.SlidePriority]"
-                      dataType="decimal"
-                      name="_upstream.SlidePriority" />
-                    <externalMetadataColumn
                       refId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].ExternalColumns[_upstream.SMLastModifiedDate]"
                       dataType="wstr"
                       length="4000"
@@ -3339,6 +3330,15 @@ where [refTable].[GUID] = ?</property>
                       dataType="i4"
                       name="_upstream.WorkflowVersion" />
                     <externalMetadataColumn
+                      refId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].ExternalColumns[_upstream.Slide]"
+                      dataType="wstr"
+                      length="4000"
+                      name="_upstream.Slide" />
+                    <externalMetadataColumn
+                      refId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].ExternalColumns[_upstream.Slide_x0020_Priority]"
+                      dataType="decimal"
+                      name="_upstream.Slide_x0020_Priority" />
+                    <externalMetadataColumn
                       refId="Package\Create rsSlides\JSON Extract.Outputs[Error Output].ExternalColumns[_upstream.guid]"
                       dataType="guid"
                       name="_upstream.guid" />
@@ -3374,8 +3374,8 @@ where [refTable].[GUID] = ?</property>
                     <property
                       containsID="true"
                       dataType="System.Int32"
-                      description="ParentId"
-                      name="ParentId">#{Package\Create rsSlides\-1:invalid}</property>
+                      description="ParentKeyField"
+                      name="ParentKeyField">#{Package\Create rsSlides\-1:invalid}</property>
                   </properties>
                   <outputColumns>
                     <outputColumn
@@ -3389,13 +3389,13 @@ where [refTable].[GUID] = ?</property>
                       name="fileName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Create rsSlides\JSON Extract.Outputs[Root].Columns[_upstream.guid]"
+                      refId="Package\Create rsSlides\JSON Extract.Outputs[Root].Columns[_upstream.GUID]"
                       dataType="guid"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create rsSlides\JSON Extract.Outputs[Root].ExternalColumns[_upstream.guid]"
-                      lineageId="Package\Create rsSlides\JSON Extract.Outputs[Root].Columns[_upstream.guid]"
-                      name="_upstream.guid"
+                      externalMetadataColumnId="Package\Create rsSlides\JSON Extract.Outputs[Root].ExternalColumns[_upstream.GUID]"
+                      lineageId="Package\Create rsSlides\JSON Extract.Outputs[Root].Columns[_upstream.GUID]"
+                      name="_upstream.GUID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Create rsSlides\JSON Extract.Outputs[Root].Columns[_upstream.oldFileName]"
@@ -3406,6 +3406,25 @@ where [refTable].[GUID] = ?</property>
                       length="100"
                       lineageId="Package\Create rsSlides\JSON Extract.Outputs[Root].Columns[_upstream.oldFileName]"
                       name="_upstream.oldFileName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Create rsSlides\JSON Extract.Outputs[Root].Columns[_upstream.Slide]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create rsSlides\JSON Extract.Outputs[Root].ExternalColumns[_upstream.Slide]"
+                      length="4000"
+                      lineageId="Package\Create rsSlides\JSON Extract.Outputs[Root].Columns[_upstream.Slide]"
+                      name="_upstream.Slide"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Create rsSlides\JSON Extract.Outputs[Root].Columns[_upstream.Slide_x0020_Priority]"
+                      dataType="decimal"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create rsSlides\JSON Extract.Outputs[Root].ExternalColumns[_upstream.Slide_x0020_Priority]"
+                      lineageId="Package\Create rsSlides\JSON Extract.Outputs[Root].Columns[_upstream.Slide_x0020_Priority]"
+                      name="_upstream.Slide_x0020_Priority"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Create rsSlides\JSON Extract.Outputs[Root].Columns[_upstream.ImageModified]"
@@ -3720,11 +3739,6 @@ where [refTable].[GUID] = ?</property>
                       length="4000"
                       name="_upstream.LinkTitleNoMenu" />
                     <externalMetadataColumn
-                      refId="Package\Create rsSlides\JSON Extract.Outputs[Root].ExternalColumns[_upstream.MarketingSlide]"
-                      dataType="wstr"
-                      length="4000"
-                      name="_upstream.MarketingSlide" />
-                    <externalMetadataColumn
                       refId="Package\Create rsSlides\JSON Extract.Outputs[Root].ExternalColumns[_upstream.MetaInfo]"
                       dataType="wstr"
                       length="4000"
@@ -3786,10 +3800,6 @@ where [refTable].[GUID] = ?</property>
                       dataType="wstr"
                       length="4000"
                       name="_upstream.ServerUrl" />
-                    <externalMetadataColumn
-                      refId="Package\Create rsSlides\JSON Extract.Outputs[Root].ExternalColumns[_upstream.SlidePriority]"
-                      dataType="decimal"
-                      name="_upstream.SlidePriority" />
                     <externalMetadataColumn
                       refId="Package\Create rsSlides\JSON Extract.Outputs[Root].ExternalColumns[_upstream.SMLastModifiedDate]"
                       dataType="wstr"
@@ -3864,6 +3874,15 @@ where [refTable].[GUID] = ?</property>
                       refId="Package\Create rsSlides\JSON Extract.Outputs[Root].ExternalColumns[_upstream.guid1]"
                       dataType="guid"
                       name="_upstream.guid" />
+                    <externalMetadataColumn
+                      refId="Package\Create rsSlides\JSON Extract.Outputs[Root].ExternalColumns[_upstream.Slide]"
+                      dataType="wstr"
+                      length="4000"
+                      name="_upstream.Slide" />
+                    <externalMetadataColumn
+                      refId="Package\Create rsSlides\JSON Extract.Outputs[Root].ExternalColumns[_upstream.Slide_x0020_Priority]"
+                      dataType="decimal"
+                      name="_upstream.Slide_x0020_Priority" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -3925,7 +3944,7 @@ where [refTable].[guid] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Create rsSlides\636:invalid};</property>
+                  name="ParameterMap">#{Package\Create rsSlides\Recordset Destination.Inputs[Recordset Destination Input].Columns[convFileNameOld]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4073,11 +4092,6 @@ where [refTable].[guid] = ?</property>
                   name="Recordset Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Create rsSlides\Recordset Destination.Inputs[Recordset Destination Input].Columns[_upstream.guid]"
-                      cachedDataType="guid"
-                      cachedName="_upstream.guid"
-                      lineageId="Package\Create rsSlides\JSON Extract.Outputs[Root].Columns[_upstream.guid]" />
-                    <inputColumn
                       refId="Package\Create rsSlides\Recordset Destination.Inputs[Recordset Destination Input].Columns[fileName]"
                       cachedDataType="wstr"
                       cachedLength="50"
@@ -4088,6 +4102,11 @@ where [refTable].[guid] = ?</property>
                       cachedDataType="dbTimeStamp"
                       cachedName="convImageModifiedOld"
                       lineageId="Package\Create rsSlides\Clean Nulls.Outputs[Derived Column Output].Columns[convImageModifiedOld]" />
+                    <inputColumn
+                      refId="Package\Create rsSlides\Recordset Destination.Inputs[Recordset Destination Input].Columns[_upstream.GUID]"
+                      cachedDataType="guid"
+                      cachedName="_upstream.GUID"
+                      lineageId="Package\Create rsSlides\JSON Extract.Outputs[Root].Columns[_upstream.GUID]" />
                     <inputColumn
                       refId="Package\Create rsSlides\Recordset Destination.Inputs[Recordset Destination Input].Columns[convFileNameOld]"
                       cachedDataType="wstr"
@@ -4120,7 +4139,7 @@ where [refTable].[guid] = ?</property>
                     <inputColumn
                       refId="Package\Create rsSlides\rsDeleteSlides.Inputs[Recordset Destination Input].Columns[fullPath]"
                       cachedDataType="wstr"
-                      cachedLength="163"
+                      cachedLength="166"
                       cachedName="fullPath"
                       lineageId="Package\Create rsSlides\create Full File Path.Outputs[Derived Column Output].Columns[fullPath]" />
                     <inputColumn
@@ -4813,17 +4832,6 @@ where [refTable].[guid] = ?</property>
                       name="LinkTitleNoMenu"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[MarketingSlide]"
-                      dataType="wstr"
-                      description="Slide"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].ExternalColumns[MarketingSlide]"
-                      length="4000"
-                      lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[MarketingSlide]"
-                      name="MarketingSlide"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[MetaInfo]"
                       dataType="wstr"
                       description="Property Bag"
@@ -4964,16 +4972,6 @@ where [refTable].[guid] = ?</property>
                       name="ServerUrl"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[SlidePriority]"
-                      dataType="decimal"
-                      description="Slide Priority"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].ExternalColumns[SlidePriority]"
-                      lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[SlidePriority]"
-                      name="SlidePriority"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[SMLastModifiedDate]"
                       dataType="wstr"
                       description="Last Modified Date"
@@ -5091,6 +5089,27 @@ where [refTable].[guid] = ?</property>
                       externalMetadataColumnId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].ExternalColumns[WorkflowVersion]"
                       lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[WorkflowVersion]"
                       name="WorkflowVersion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[Slide]"
+                      dataType="wstr"
+                      description="Slide"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].ExternalColumns[Slide]"
+                      length="4000"
+                      lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[Slide]"
+                      name="Slide"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[Slide_x0020_Priority]"
+                      dataType="decimal"
+                      description="Slide Priority"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].ExternalColumns[Slide_x0020_Priority]"
+                      lineageId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].Columns[Slide_x0020_Priority]"
+                      name="Slide_x0020_Priority"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -5417,12 +5436,6 @@ where [refTable].[guid] = ?</property>
                       length="4000"
                       name="LinkTitleNoMenu" />
                     <externalMetadataColumn
-                      refId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].ExternalColumns[MarketingSlide]"
-                      dataType="wstr"
-                      description="Slide"
-                      length="4000"
-                      name="MarketingSlide" />
-                    <externalMetadataColumn
                       refId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].ExternalColumns[MetaInfo]"
                       dataType="wstr"
                       description="Property Bag"
@@ -5498,11 +5511,6 @@ where [refTable].[guid] = ?</property>
                       length="4000"
                       name="ServerUrl" />
                     <externalMetadataColumn
-                      refId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].ExternalColumns[SlidePriority]"
-                      dataType="decimal"
-                      description="Slide Priority"
-                      name="SlidePriority" />
-                    <externalMetadataColumn
                       refId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].ExternalColumns[SMLastModifiedDate]"
                       dataType="wstr"
                       description="Last Modified Date"
@@ -5566,6 +5574,17 @@ where [refTable].[guid] = ?</property>
                       dataType="i4"
                       description="Workflow Version"
                       name="WorkflowVersion" />
+                    <externalMetadataColumn
+                      refId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].ExternalColumns[Slide]"
+                      dataType="wstr"
+                      description="Slide"
+                      length="4000"
+                      name="Slide" />
+                    <externalMetadataColumn
+                      refId="Package\Create rsSlides\SharePoint Source.Outputs[Primary Output].ExternalColumns[Slide_x0020_Priority]"
+                      dataType="decimal"
+                      description="Slide Priority"
+                      name="Slide_x0020_Priority" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -5956,10 +5975,10 @@ where [refTable].[guid] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DFT Retrieve Marketing Slides Sharepoint\Cache Sides.Inputs[Cache Input].Columns[SlidePriority]"
+                      refId="Package\DFT Retrieve Marketing Slides Sharepoint\Cache Sides.Inputs[Cache Input].Columns[Slide_x0020_Priority]"
                       cachedDataType="decimal"
-                      cachedName="SlidePriority"
-                      lineageId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].Columns[SlidePriority]">
+                      cachedName="Slide_x0020_Priority"
+                      lineageId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].Columns[Slide_x0020_Priority]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -5968,11 +5987,11 @@ where [refTable].[guid] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\DFT Retrieve Marketing Slides Sharepoint\Cache Sides.Inputs[Cache Input].Columns[MarketingSlide]"
+                      refId="Package\DFT Retrieve Marketing Slides Sharepoint\Cache Sides.Inputs[Cache Input].Columns[Slide]"
                       cachedDataType="wstr"
                       cachedLength="4000"
-                      cachedName="MarketingSlide"
-                      lineageId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].Columns[MarketingSlide]">
+                      cachedName="Slide"
+                      lineageId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].Columns[Slide]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -6103,6 +6122,7 @@ where [refTable].[guid] = ?</property>
                     <outputColumn
                       refId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].Columns[Title]"
                       dataType="wstr"
+                      description="Title"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].ExternalColumns[Title]"
@@ -6111,27 +6131,9 @@ where [refTable].[guid] = ?</property>
                       name="Title"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].Columns[SlidePriority]"
-                      dataType="decimal"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].ExternalColumns[SlidePriority]"
-                      lineageId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].Columns[SlidePriority]"
-                      name="SlidePriority"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].Columns[MarketingSlide]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].ExternalColumns[MarketingSlide]"
-                      length="4000"
-                      lineageId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].Columns[MarketingSlide]"
-                      name="MarketingSlide"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].Columns[Modified]"
                       dataType="dbTimeStamp"
+                      description="Modified"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].ExternalColumns[Modified]"
@@ -6141,11 +6143,33 @@ where [refTable].[guid] = ?</property>
                     <outputColumn
                       refId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].Columns[GUID]"
                       dataType="guid"
+                      description="GUID"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].ExternalColumns[GUID]"
                       lineageId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].Columns[GUID]"
                       name="GUID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].Columns[Slide]"
+                      dataType="wstr"
+                      description="Slide"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].ExternalColumns[Slide]"
+                      length="4000"
+                      lineageId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].Columns[Slide]"
+                      name="Slide"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].Columns[Slide_x0020_Priority]"
+                      dataType="decimal"
+                      description="Slide Priority"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].ExternalColumns[Slide_x0020_Priority]"
+                      lineageId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].Columns[Slide_x0020_Priority]"
+                      name="Slide_x0020_Priority"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -6611,16 +6635,16 @@ where [refTable].[guid] = ?</property>
                       description="Workflow Version"
                       name="WorkflowVersion" />
                     <externalMetadataColumn
-                      refId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].ExternalColumns[MarketingSlide]"
+                      refId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].ExternalColumns[Slide]"
                       dataType="wstr"
                       description="Slide"
                       length="4000"
-                      name="MarketingSlide" />
+                      name="Slide" />
                     <externalMetadataColumn
-                      refId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].ExternalColumns[SlidePriority]"
+                      refId="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source.Outputs[Primary Output].ExternalColumns[Slide_x0020_Priority]"
                       dataType="decimal"
                       description="Slide Priority"
-                      name="SlidePriority" />
+                      name="Slide_x0020_Priority" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -9438,6 +9462,61 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           lineageId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].Columns[image_Attachment_1_FileName]"
                           name="image_Attachment_1_FileName"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].Columns[MigrationWizId]"
+                          dataType="wstr"
+                          description="MigrationWizId"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].ExternalColumns[MigrationWizId]"
+                          length="4000"
+                          lineageId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].Columns[MigrationWizId]"
+                          name="MigrationWizId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].Columns[MigrationWizIdDocumentLibraryPermissions]"
+                          dataType="wstr"
+                          description="MigrationWizIdDocumentLibraryPermissions"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].ExternalColumns[MigrationWizIdDocumentLibraryPermissions]"
+                          length="4000"
+                          lineageId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].Columns[MigrationWizIdDocumentLibraryPermissions]"
+                          name="MigrationWizIdDocumentLibraryPermissions"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].Columns[MigrationWizIdPermissionLevels]"
+                          dataType="wstr"
+                          description="MigrationWizIdPermissionLevels"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].ExternalColumns[MigrationWizIdPermissionLevels]"
+                          length="4000"
+                          lineageId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].Columns[MigrationWizIdPermissionLevels]"
+                          name="MigrationWizIdPermissionLevels"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].Columns[MigrationWizIdPermissions]"
+                          dataType="wstr"
+                          description="MigrationWizIdPermissions"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].ExternalColumns[MigrationWizIdPermissions]"
+                          length="4000"
+                          lineageId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].Columns[MigrationWizIdPermissions]"
+                          name="MigrationWizIdPermissions"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].Columns[MigrationWizIdSecurityGroups]"
+                          dataType="wstr"
+                          description="MigrationWizIdSecurityGroups"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].ExternalColumns[MigrationWizIdSecurityGroups]"
+                          length="4000"
+                          lineageId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].Columns[MigrationWizIdSecurityGroups]"
+                          name="MigrationWizIdSecurityGroups"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -10169,6 +10248,36 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           description="image_Attachment_1_FileName"
                           length="4000"
                           name="image_Attachment_1_FileName" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].ExternalColumns[MigrationWizId]"
+                          dataType="wstr"
+                          description="MigrationWizId"
+                          length="4000"
+                          name="MigrationWizId" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].ExternalColumns[MigrationWizIdDocumentLibraryPermissions]"
+                          dataType="wstr"
+                          description="MigrationWizIdDocumentLibraryPermissions"
+                          length="4000"
+                          name="MigrationWizIdDocumentLibraryPermissions" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].ExternalColumns[MigrationWizIdPermissionLevels]"
+                          dataType="wstr"
+                          description="MigrationWizIdPermissionLevels"
+                          length="4000"
+                          name="MigrationWizIdPermissionLevels" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].ExternalColumns[MigrationWizIdPermissions]"
+                          dataType="wstr"
+                          description="MigrationWizIdPermissions"
+                          length="4000"
+                          name="MigrationWizIdPermissions" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source.Outputs[Primary Output].ExternalColumns[MigrationWizIdSecurityGroups]"
+                          dataType="wstr"
+                          description="MigrationWizIdSecurityGroups"
+                          length="4000"
+                          name="MigrationWizIdSecurityGroups" />
                       </externalMetadataColumns>
                     </output>
                   </outputs>
@@ -10453,26 +10562,26 @@ set FileName = ?, ImageModified = ?
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{C0729944-F5E1-4405-8CFD-B5F65D434DEB}"
-          DTS:ObjectName="{C0729944-F5E1-4405-8CFD-B5F65D434DEB}"
+          DTS:DTSID="{D37BBBA1-F7C5-4589-B2F9-CEB486FA177F}"
+          DTS:ObjectName="{D37BBBA1-F7C5-4589-B2F9-CEB486FA177F}"
           DTS:ValueIndex="0"
-          DTS:VariableName="User::varGuid" />
-        <DTS:ForEachVariableMapping
-          DTS:CreationName=""
-          DTS:DTSID="{222F1EDD-3BCF-4A5F-8BB0-3C62F82A046C}"
-          DTS:ObjectName="{222F1EDD-3BCF-4A5F-8BB0-3C62F82A046C}"
-          DTS:ValueIndex="1"
           DTS:VariableName="User::varFileName" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{4B06CFD6-241C-4101-BBBE-CE5688FF60C7}"
-          DTS:ObjectName="{4B06CFD6-241C-4101-BBBE-CE5688FF60C7}"
-          DTS:ValueIndex="2"
+          DTS:DTSID="{5EEEF940-3804-47B1-B858-A1CE0026D8A3}"
+          DTS:ObjectName="{5EEEF940-3804-47B1-B858-A1CE0026D8A3}"
+          DTS:ValueIndex="1"
           DTS:VariableName="User::varOldModfiedDate" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{E04047FD-DE13-44C3-A3B3-3B50628CBA95}"
-          DTS:ObjectName="{E04047FD-DE13-44C3-A3B3-3B50628CBA95}"
+          DTS:DTSID="{AE17B911-6612-4FF7-B18A-424AEAD4B706}"
+          DTS:ObjectName="{AE17B911-6612-4FF7-B18A-424AEAD4B706}"
+          DTS:ValueIndex="2"
+          DTS:VariableName="User::varGuid" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{C50F5556-878B-4B20-9AD0-0E8AAFB98A65}"
+          DTS:ObjectName="{C50F5556-878B-4B20-9AD0-0E8AAFB98A65}"
           DTS:ValueIndex="3"
           DTS:VariableName="User::varOldFileName" />
       </DTS:ForEachVariableMappings>
@@ -12738,79 +12847,67 @@ where [refTable].[guid] = ?</property>
         <NodeLayout
           Size="160,42"
           Id="Package\Cache Deletions"
-          TopLeft="459.333333333333,183.093567483277" />
+          TopLeft="460.102564130779,183.093567483277" />
         <NodeLayout
-          Size="154,42"
+          Size="152.8,41.6"
           Id="Package\Create rsSlides"
-          TopLeft="452.031249988359,804.307018522571" />
+          TopLeft="475.781250859504,821.710244061329" />
         <NodeLayout
-          Size="279,42"
+          Size="279.2,42"
           Id="Package\Create Stagging Tables If they don't exist"
           TopLeft="50.25,80.5" />
         <NodeLayout
-          Size="235,42"
+          Size="235.2,42"
           Id="Package\DFT Create Deletion RecordSet"
           TopLeft="432.722222222222,278.694444444445" />
         <NodeLayout
-          Size="285,42"
+          Size="280.8,41.6"
           Id="Package\DFT Retrieve Marketing Slides Sharepoint"
-          TopLeft="412.124999916181,88.1315789216113" />
+          TopLeft="414.048076909796,89.3896434183889" />
         <NodeLayout
-          Size="153,42"
+          Size="152.8,42"
           Id="Package\Foreach Slide Image\Retrieve Slides"
-          TopLeft="19.0000005960464,24.1140363948935" />
+          TopLeft="23.6153853807224,23.2753267303752" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="205,121"
-          Size="205,164"
+          PanelSize="204.8,120.8"
+          Size="204.8,164"
           Id="Package\Foreach Slide Image"
           TopLeft="747.909215691477,906.018178601655" />
         <NodeLayout
-          Size="181,42"
+          Size="180.8,42"
           Id="Package\Get or Update Slides"
-          TopLeft="445.416666666667,690.694444444444" />
+          TopLeft="453.589743889531,701.07347654286" />
         <NodeLayout
-          Size="155,42"
+          Size="153.6,41.6"
           Id="Package\Loop through tblDelSlides\Create FilePath"
           TopLeft="53.861111111111,36.7222222222222" />
         <NodeLayout
-          Size="207,42"
+          Size="207.2,42"
           Id="Package\Loop through tblDelSlides\Delete Slide from Network"
           TopLeft="19.7499999999998,127.305555555555" />
         <EdgeLayout
           Id="Package\Loop through tblDelSlides.PrecedenceConstraints[Constraint]"
-          TopLeft="131.361111111111,78.7222222222222">
+          TopLeft="127.005555555555,78.3222222222222">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-8.1111111111112,48.5833333333328"
+              EndConnector="0,48.9833333333328"
               Start="0,0"
-              End="-8.1111111111112,41.0833333333328">
+              End="0,41.4833333333328">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.2916666666664" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2916666666664"
-                    Point2="0,24.2916666666664"
-                    Point3="-4,24.2916666666664" />
-                  <mssgle:LineSegment
-                    End="-4.1111111111112,24.2916666666664" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-4.1111111111112,24.2916666666664"
-                    Point2="-8.1111111111112,24.2916666666664"
-                    Point3="-8.1111111111112,28.2916666666664" />
-                  <mssgle:LineSegment
-                    End="-8.1111111111112,41.0833333333328" />
+                    End="0,41.4833333333328" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-12.0555555555556,29.2916666666664,16,16"
+              BoundingBox="-8,12.7416666666664,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -12818,7 +12915,7 @@ where [refTable].[guid] = ?</property>
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="262,224"
-          Size="262,267"
+          Size="262,267.2"
           Id="Package\Loop through tblDelSlides"
           TopLeft="416.937524051405,367.868426461629" />
         <NodeLayout
@@ -12826,23 +12923,35 @@ where [refTable].[guid] = ?</property>
           Id="Package\Remove Deleted Slides"
           TopLeft="1110,966.416666639762" />
         <NodeLayout
-          Size="147,42"
+          Size="145.6,41.6"
           Id="Package\Update Slides"
-          TopLeft="479.87500002794,958.144735745281" />
+          TopLeft="481.413461622832,958.9834454098" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="532.473958327513,732.694444444444">
+          TopLeft="543.989743889531,743.07347654286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,71.6125740781267"
+              EndConnector="8.19150696997315,78.6367675184697"
               Start="0,0"
-              End="0,64.1125740781267">
+              End="8.19150696997315,71.1367675184697">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,64.1125740781267" />
+                    End="0,35.3183837592348" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.3183837592348"
+                    Point2="0,39.3183837592348"
+                    Point3="4,39.3183837592348" />
+                  <mssgle:LineSegment
+                    End="4.19150696997315,39.3183837592348" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.19150696997315,39.3183837592348"
+                    Point2="8.19150696997315,39.3183837592348"
+                    Point3="8.19150696997315,43.3183837592348" />
+                  <mssgle:LineSegment
+                    End="8.19150696997315,71.1367675184697" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12853,30 +12962,30 @@ where [refTable].[guid] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="539.333333333333,225.093567483277">
+          TopLeft="540.102564130779,225.093567483277">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.7222222222221,53.6008769611684"
+              EndConnector="10.219658091443,53.600876961168"
               Start="0,0"
-              End="10.7222222222221,46.1008769611684">
+              End="10.219658091443,46.100876961168">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.8004384805842" />
+                    End="0,22.800438480584" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.8004384805842"
-                    Point2="0,26.8004384805842"
-                    Point3="4,26.8004384805842" />
+                    Point1="0,22.800438480584"
+                    Point2="0,26.800438480584"
+                    Point3="4,26.800438480584" />
                   <mssgle:LineSegment
-                    End="6.72222222222206,26.8004384805842" />
+                    End="6.21965809144297,26.800438480584" />
                   <mssgle:CubicBezierSegment
-                    Point1="6.72222222222206,26.8004384805842"
-                    Point2="10.7222222222221,26.8004384805842"
-                    Point3="10.7222222222221,30.8004384805842" />
+                    Point1="6.21965809144297,26.800438480584"
+                    Point2="10.219658091443,26.800438480584"
+                    Point3="10.219658091443,30.800438480584" />
                   <mssgle:LineSegment
-                    End="10.7222222222221,46.1008769611684" />
+                    End="10.219658091443,46.100876961168" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12909,30 +13018,18 @@ where [refTable].[guid] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="529.031249988359,846.307018522571">
+          TopLeft="553.197356241168,863.310244061329">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="24.3437500395811,111.83771722271"
+              EndConnector="0,95.6732013484709"
               Start="0,0"
-              End="24.3437500395811,104.33771722271">
+              End="0,88.1732013484709">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.918858611355" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,51.918858611355"
-                    Point2="0,55.918858611355"
-                    Point3="4,55.918858611355" />
-                  <mssgle:LineSegment
-                    End="20.3437500395811,55.918858611355" />
-                  <mssgle:CubicBezierSegment
-                    Point1="20.3437500395811,55.918858611355"
-                    Point2="24.3437500395811,55.918858611355"
-                    Point3="24.3437500395811,59.918858611355" />
-                  <mssgle:LineSegment
-                    End="24.3437500395811,104.33771722271" />
+                    End="0,88.1732013484709" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12943,18 +13040,30 @@ where [refTable].[guid] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="329.25,105.315789460806">
+          TopLeft="329.45,101.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="82.874999916181,0"
+              EndConnector="84.598076909796,8.68964341838893"
               Start="0,0"
-              End="75.374999916181,0">
+              End="77.098076909796,8.68964341838893">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="75.374999916181,0" />
+                    End="38.299038454898,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.299038454898,0"
+                    Point2="42.299038454898,0"
+                    Point3="42.299038454898,4" />
+                  <mssgle:LineSegment
+                    End="42.299038454898,4.68964341838893" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.299038454898,4.68964341838893"
+                    Point2="42.299038454898,8.68964341838893"
+                    Point3="46.299038454898,8.68964341838893" />
+                  <mssgle:LineSegment
+                    End="77.098076909796,8.68964341838893" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12965,30 +13074,30 @@ where [refTable].[guid] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="554.791666582848,130.131578921611">
+          TopLeft="554.448076909796,130.989643418389">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-15.4583332495145,52.9619885616653"
+              EndConnector="-14.345512779017,52.1039240648881"
               Start="0,0"
-              End="-15.4583332495145,45.4619885616653">
+              End="-14.345512779017,44.6039240648881">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.4809942808327" />
+                    End="0,22.051962032444" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.4809942808327"
-                    Point2="0,26.4809942808327"
-                    Point3="-4,26.4809942808327" />
+                    Point1="0,22.051962032444"
+                    Point2="0,26.051962032444"
+                    Point3="-4,26.051962032444" />
                   <mssgle:LineSegment
-                    End="-11.4583332495145,26.4809942808327" />
+                    End="-10.345512779017,26.051962032444" />
                   <mssgle:CubicBezierSegment
-                    Point1="-11.4583332495145,26.4809942808327"
-                    Point2="-15.4583332495145,26.4809942808327"
-                    Point3="-15.4583332495145,30.4809942808327" />
+                    Point1="-10.345512779017,26.051962032444"
+                    Point2="-14.345512779017,26.051962032444"
+                    Point3="-14.345512779017,30.051962032444" />
                   <mssgle:LineSegment
-                    End="-15.4583332495145,45.4619885616653" />
+                    End="-14.345512779017,44.6039240648881" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12999,30 +13108,18 @@ where [refTable].[guid] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="547.937524051405,634.868426461629">
+          TopLeft="545.963633970468,635.068426461629">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-12.0208573847381,55.826017982815"
+              EndConnector="0,66.0050500812308"
               Start="0,0"
-              End="-12.0208573847381,48.326017982815">
+              End="0,58.5050500812308">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.9130089914075" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.9130089914075"
-                    Point2="0,27.9130089914075"
-                    Point3="-4,27.9130089914075" />
-                  <mssgle:LineSegment
-                    End="-8.02085738473806,27.9130089914075" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-8.02085738473806,27.9130089914075"
-                    Point2="-12.0208573847381,27.9130089914075"
-                    Point3="-12.0208573847381,31.9130089914075" />
-                  <mssgle:LineSegment
-                    End="-12.0208573847381,48.326017982815" />
+                    End="0,58.5050500812308" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13033,18 +13130,18 @@ where [refTable].[guid] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="952.909215691477,987.717422620708">
+          TopLeft="952.709215691477,987.717422620708">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="157.090784308523,0"
+              EndConnector="157.290784308523,0"
               Start="0,0"
-              End="149.590784308523,0">
+              End="149.790784308523,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="149.590784308523,0" />
+                    End="149.790784308523,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13055,30 +13152,30 @@ where [refTable].[guid] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="626.87500002794,979.144735745281">
+          TopLeft="627.013461622832,979.7834454098">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="121.034215663537,8.87344285637425"
+              EndConnector="120.895754068645,8.23473319185507"
               Start="0,0"
-              End="113.534215663537,8.87344285637425">
+              End="113.395754068645,8.23473319185507">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="56.5171078317685,0" />
+                    End="56.4478770343225,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="56.5171078317685,0"
-                    Point2="60.5171078317685,0"
-                    Point3="60.5171078317685,4" />
+                    Point1="56.4478770343225,0"
+                    Point2="60.4478770343225,0"
+                    Point3="60.4478770343225,4" />
                   <mssgle:LineSegment
-                    End="60.5171078317685,4.87344285637425" />
+                    End="60.4478770343225,4.23473319185507" />
                   <mssgle:CubicBezierSegment
-                    Point1="60.5171078317685,4.87344285637425"
-                    Point2="60.5171078317685,8.87344285637425"
-                    Point3="64.5171078317685,8.87344285637425" />
+                    Point1="60.4478770343225,4.23473319185507"
+                    Point2="60.4478770343225,8.23473319185507"
+                    Point3="64.4478770343225,8.23473319185507" />
                   <mssgle:LineSegment
-                    End="113.534215663537,8.87344285637425" />
+                    End="113.395754068645,8.23473319185507" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13100,7 +13197,7 @@ where [refTable].[guid] = ?</property>
           Id="Package\Cache Deletions\Stage Deletes"
           TopLeft="479,249" />
         <NodeLayout
-          Size="213.333333333334,42"
+          Size="213.2,42"
           Id="Package\Cache Deletions\Retrieve tblMarketingSlides"
           TopLeft="470,14" />
         <NodeLayout
@@ -13212,239 +13309,245 @@ where [refTable].[guid] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="177.333333333334,42"
+          Size="177.2,42"
           Id="Package\Create rsSlides\create Full File Path"
           TopLeft="675,336" />
         <NodeLayout
-          Size="184,42.6666666666667"
-          Id="Package\Create rsSlides\Recordset Destination"
-          TopLeft="203.749996963888,453.771937487308" />
-        <NodeLayout
-          Size="202.666666666667,42"
-          Id="Package\Create rsSlides\FileName Record Exists?"
-          TopLeft="490.750000018626,204" />
-        <NodeLayout
-          Size="169.333333333334,42.6666666666667"
+          Size="169.2,42.8"
           Id="Package\Create rsSlides\SharePoint Source"
-          TopLeft="523.749992195517,10.2631580879153" />
+          TopLeft="499.519222075968,8.16638392661918" />
         <NodeLayout
-          Size="144,42.6666666666667"
+          Size="202.8,42"
+          Id="Package\Create rsSlides\FileName Record Exists?"
+          TopLeft="484.634615417349,212" />
+        <NodeLayout
+          Size="144,41.6"
           Id="Package\Create rsSlides\JSON Extract"
-          TopLeft="374.124992502853,284.561407346585" />
+          TopLeft="359.5,282.5" />
         <NodeLayout
           Size="150,42"
           Id="Package\Create rsSlides\rsDeleteSlides"
           TopLeft="838,438" />
         <NodeLayout
-          Size="260,42"
+          Size="256.8,41.6"
           Id="Package\Create rsSlides\Match Current Slides with Sharepoint"
-          TopLeft="458,101" />
+          TopLeft="468.846154170629,112.741935303258" />
         <NodeLayout
-          Size="134.666666666667,42"
+          Size="134.8,42"
           Id="Package\Create rsSlides\Clean Nulls"
-          TopLeft="293.124996451661,376.298245343585" />
+          TopLeft="291.124996451661,374.298245343585" />
+        <NodeLayout
+          Size="184,42.8"
+          Id="Package\Create rsSlides\Recordset Destination"
+          TopLeft="203.749996963888,453.771937487308" />
         <EdgeLayout
           Id="Package\Create rsSlides.Paths[Root]"
-          TopLeft="446.124992502853,327.228074013251">
+          TopLeft="431.5,324.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-85.6666627178591,49.0701713303338"
+              EndConnector="-72.9750035483388,50.1982453435849"
               Start="0,0"
-              End="-85.6666627178591,41.5701713303338">
+              End="-72.9750035483388,42.6982453435849">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.5350856651669" />
+                    End="0,21.0991226717924" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.5350856651669"
-                    Point2="0,24.5350856651669"
-                    Point3="-4,24.5350856651669" />
+                    Point1="0,21.0991226717924"
+                    Point2="0,25.0991226717924"
+                    Point3="-4,25.0991226717924" />
                   <mssgle:LineSegment
-                    End="-81.6666627178591,24.5350856651669" />
+                    End="-68.9750035483388,25.0991226717924" />
                   <mssgle:CubicBezierSegment
-                    Point1="-81.6666627178591,24.5350856651669"
-                    Point2="-85.6666627178591,24.5350856651669"
-                    Point3="-85.6666627178591,28.5350856651669" />
+                    Point1="-68.9750035483388,25.0991226717924"
+                    Point2="-72.9750035483388,25.0991226717924"
+                    Point3="-72.9750035483388,29.0991226717924" />
                   <mssgle:LineSegment
-                    End="-85.6666627178591,41.5701713303338" />
+                    End="-72.9750035483388,42.6982453435849" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Create rsSlides.Paths[Primary Output]"
-          TopLeft="608.416658862183,52.929824754582">
+          TopLeft="584.119222075968,50.9663839266192">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-20.4166588621835,48.070175245418"
+              EndConnector="13.126932094661,61.7755513766388"
               Start="0,0"
-              End="-20.4166588621835,40.570175245418">
+              End="13.126932094661,54.2755513766388">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.035087622709" />
+                    End="0,26.8877756883194" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.035087622709"
-                    Point2="0,24.035087622709"
-                    Point3="-4,24.035087622709" />
+                    Point1="0,26.8877756883194"
+                    Point2="0,30.8877756883194"
+                    Point3="4,30.8877756883194" />
                   <mssgle:LineSegment
-                    End="-16.4166588621835,24.035087622709" />
+                    End="9.12693209466102,30.8877756883194" />
                   <mssgle:CubicBezierSegment
-                    Point1="-16.4166588621835,24.035087622709"
-                    Point2="-20.4166588621835,24.035087622709"
-                    Point3="-20.4166588621835,28.035087622709" />
+                    Point1="9.12693209466102,30.8877756883194"
+                    Point2="13.126932094661,30.8877756883194"
+                    Point3="13.126932094661,34.8877756883194" />
                   <mssgle:LineSegment
-                    End="-20.4166588621835,40.570175245418" />
+                    End="13.126932094661,54.2755513766388" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Create rsSlides.Paths[Lookup Match Output]"
-          TopLeft="590.04166667598,143">
+          TopLeft="597.246154170629,154.341935303258">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61"
+              EndConnector="-11.2115387532798,57.658064696742"
               Start="0,0"
-              End="0,53.5">
+              End="-11.2115387532798,50.158064696742">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.5" />
+                    End="0,24.829032348371" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.829032348371"
+                    Point2="0,28.829032348371"
+                    Point3="-4,28.829032348371" />
+                  <mssgle:LineSegment
+                    End="-7.2115387532798,28.829032348371" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.2115387532798,28.829032348371"
+                    Point2="-11.2115387532798,28.829032348371"
+                    Point3="-11.2115387532798,32.829032348371" />
+                  <mssgle:LineSegment
+                    End="-11.2115387532798,50.158064696742" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.9453125,96.3827734375,11.609375"
+              BoundingBox="-53.7971560953899,33.829032348371,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Create rsSlides.Paths[FileName Exsists]"
-          TopLeft="559.638888907515,246">
+          TopLeft="553.567948750682,254">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-113.513896404662,38.5614073465846"
+              EndConnector="-122.067948750683,28.5"
               Start="0,0"
-              End="-113.513896404662,31.0614073465846">
+              End="-122.067948750683,21">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.6057914849102" />
+                    End="0,7.53385518590998" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.6057914849102"
-                    Point2="0,15.6057914849102"
-                    Point3="-4,15.6057914849102" />
+                    Point1="0,7.53385518590998"
+                    Point2="0,11.53385518591"
+                    Point3="-4,11.53385518591" />
                   <mssgle:LineSegment
-                    End="-109.513896404662,15.6057914849102" />
+                    End="-118.067948750683,11.53385518591" />
                   <mssgle:CubicBezierSegment
-                    Point1="-109.513896404662,15.6057914849102"
-                    Point2="-113.513896404662,15.6057914849102"
-                    Point3="-113.513896404662,19.6057914849102" />
+                    Point1="-118.067948750683,11.53385518591"
+                    Point2="-122.067948750683,11.53385518591"
+                    Point3="-122.067948750683,15.53385518591" />
                   <mssgle:LineSegment
-                    End="-113.513896404662,31.0614073465846" />
+                    End="-122.067948750683,21" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-93.9595263273309,20.6057914849102,74.40515625,9.7490234375"
+              BoundingBox="-98.2365525003415,16.53385518591,74.40515625,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Create rsSlides.Paths[FileName Deleted]"
-          TopLeft="592.08333335196,246">
+          TopLeft="586.034615417349,254">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="171.583333314707,90"
+              EndConnector="177.565384582651,82"
               Start="0,0"
-              End="171.583333314707,82.5">
+              End="177.565384582651,74.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41" />
+                    End="0,37" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,41"
-                    Point2="0,45"
-                    Point3="4,45" />
+                    Point1="0,37"
+                    Point2="0,41"
+                    Point3="4,41" />
                   <mssgle:LineSegment
-                    End="167.583333314707,45" />
+                    End="173.565384582651,41" />
                   <mssgle:CubicBezierSegment
-                    Point1="167.583333314707,45"
-                    Point2="171.583333314707,45"
-                    Point3="171.583333314707,49" />
+                    Point1="173.565384582651,41"
+                    Point2="177.565384582651,41"
+                    Point3="177.565384582651,45" />
                   <mssgle:LineSegment
-                    End="171.583333314707,82.5" />
+                    End="177.565384582651,74.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="46.7536783761035,50,78.0759765625,9.7490234375"
+              BoundingBox="49.7447040100755,46,78.0759765625,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Create rsSlides.Paths[Derived Column Output1]"
-          TopLeft="360.458329784994,418.298245343585">
+          TopLeft="358.524996451661,416.298245343585">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-64.7083328211059,35.4736921437232"
+              EndConnector="-62.7749994877731,37.4736921437231"
               Start="0,0"
-              End="-64.7083328211059,27.9736921437232">
+              End="-62.7749994877731,29.9736921437231">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.7368460718616" />
+                    End="0,14.7368460718615" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.7368460718616"
-                    Point2="0,17.7368460718616"
-                    Point3="-4,17.7368460718616" />
+                    Point1="0,14.7368460718615"
+                    Point2="0,18.7368460718615"
+                    Point3="-4,18.7368460718615" />
                   <mssgle:LineSegment
-                    End="-60.7083328211059,17.7368460718616" />
+                    End="-58.7749994877731,18.7368460718615" />
                   <mssgle:CubicBezierSegment
-                    Point1="-60.7083328211059,17.7368460718616"
-                    Point2="-64.7083328211059,17.7368460718616"
-                    Point3="-64.7083328211059,21.7368460718616" />
+                    Point1="-58.7749994877731,18.7368460718615"
+                    Point2="-62.7749994877731,18.7368460718615"
+                    Point3="-62.7749994877731,22.7368460718615" />
                   <mssgle:LineSegment
-                    End="-64.7083328211059,27.9736921437232" />
+                    End="-62.7749994877731,29.9736921437231" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13478,9 +13581,7 @@ where [refTable].[guid] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13515,7 +13616,7 @@ where [refTable].[guid] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="134.666666666667,42"
+          Size="134.8,42"
           Id="Package\DFT Create Deletion RecordSet\rsDelSlides"
           TopLeft="479,222" />
         <NodeLayout
@@ -13596,39 +13697,39 @@ where [refTable].[guid] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="171,42"
+          Size="168.8,41.6"
           Id="Package\DFT Retrieve Marketing Slides Sharepoint\SharePoint Source"
-          TopLeft="401.5,6.5" />
+          TopLeft="400.5,9.50000000000001" />
         <NodeLayout
-          Size="140,43"
+          Size="140,43.2"
           Id="Package\DFT Retrieve Marketing Slides Sharepoint\Cache Sides"
-          TopLeft="427,201" />
+          TopLeft="429,201.419354832259" />
         <EdgeLayout
           Id="Package\DFT Retrieve Marketing Slides Sharepoint.Paths[Primary Output]"
-          TopLeft="486.833333333333,48.5">
+          TopLeft="484.9,51.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.1666666666666,152.5"
+              EndConnector="14.1,150.319354832259"
               Start="0,0"
-              End="10.1666666666666,145">
+              End="14.1,142.819354832259">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,72.25" />
+                    End="0,71.1596774161296" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,72.25"
-                    Point2="0,76.25"
-                    Point3="4,76.25" />
+                    Point1="0,71.1596774161296"
+                    Point2="0,75.1596774161296"
+                    Point3="4,75.1596774161296" />
                   <mssgle:LineSegment
-                    End="6.16666666666657,76.25" />
+                    End="10.1,75.1596774161296" />
                   <mssgle:CubicBezierSegment
-                    Point1="6.16666666666657,76.25"
-                    Point2="10.1666666666666,76.25"
-                    Point3="10.1666666666666,80.25" />
+                    Point1="10.1,75.1596774161296"
+                    Point2="14.1,75.1596774161296"
+                    Point3="14.1,79.1596774161296" />
                   <mssgle:LineSegment
-                    End="10.1666666666666,145" />
+                    End="14.1,142.819354832259" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13648,42 +13749,42 @@ where [refTable].[guid] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="163,42"
+          Size="163.2,42"
           Id="Package\Foreach Slide Image\Retrieve Slides\convert file name"
           TopLeft="470,232" />
         <NodeLayout
-          Size="171,42"
+          Size="171.2,42"
           Id="Package\Foreach Slide Image\Retrieve Slides\SharePoint Source"
-          TopLeft="454,127.333333333333" />
+          TopLeft="455.153846196169,129.849462326888" />
         <NodeLayout
-          Size="202,42"
-          Id="Package\Foreach Slide Image\Retrieve Slides\Write Slide Image to Disk"
-          TopLeft="388,529" />
-        <NodeLayout
-          Size="157,42"
+          Size="156.8,42"
           Id="Package\Foreach Slide Image\Retrieve Slides\create file paths"
           TopLeft="574,321" />
         <NodeLayout
-          Size="222,42"
-          Id="Package\Foreach Slide Image\Retrieve Slides\Update Image Records in DB"
-          TopLeft="118,769" />
+          Size="202,42"
+          Id="Package\Foreach Slide Image\Retrieve Slides\Write Slide Image to Disk"
+          TopLeft="389.923076993615,529" />
         <NodeLayout
           Size="156,42"
           Id="Package\Foreach Slide Image\Retrieve Slides\Change Occur?"
           TopLeft="588,412" />
         <NodeLayout
-          Size="167,42"
+          Size="167.2,42"
           Id="Package\Foreach Slide Image\Retrieve Slides\Script Component"
-          TopLeft="271,625" />
+          TopLeft="277.153846379568,624.161290335481" />
+        <NodeLayout
+          Size="222,42"
+          Id="Package\Foreach Slide Image\Retrieve Slides\Update Image Records in DB"
+          TopLeft="118,769" />
         <EdgeLayout
           Id="Package\Foreach Slide Image\Retrieve Slides.Paths[True]"
           TopLeft="666,454">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-177,75"
+              EndConnector="-175.076923006385,75"
               Start="0,0"
-              End="-177,67.5">
+              End="-175.076923006385,67.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -13694,49 +13795,49 @@ where [refTable].[guid] = ?</property>
                     Point2="0,37.5"
                     Point3="-4,37.5" />
                   <mssgle:LineSegment
-                    End="-173,37.5" />
+                    End="-171.076923006385,37.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-173,37.5"
-                    Point2="-177,37.5"
-                    Point3="-177,41.5" />
+                    Point1="-171.076923006385,37.5"
+                    Point2="-175.076923006385,37.5"
+                    Point3="-175.076923006385,41.5" />
                   <mssgle:LineSegment
-                    End="-177,67.5" />
+                    End="-175.076923006385,67.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-99.51244140625,42.5,22.0248828125,9.421875"
+              BoundingBox="-98.5509029094425,42.5,22.0248828125,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Slide Image\Retrieve Slides.Paths[Primary Output]"
-          TopLeft="539.5,169.333333333333">
+          TopLeft="540.753846196169,171.849462326888">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="12,62.666666666667"
+              EndConnector="10.846153803831,60.1505376731116"
               Start="0,0"
-              End="12,55.166666666667">
+              End="10.846153803831,52.6505376731116">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.3333333333335" />
+                    End="0,26.0752688365558" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.3333333333335"
-                    Point2="0,31.3333333333335"
-                    Point3="4,31.3333333333335" />
+                    Point1="0,26.0752688365558"
+                    Point2="0,30.0752688365558"
+                    Point3="4,30.0752688365558" />
                   <mssgle:LineSegment
-                    End="8,31.3333333333335" />
+                    End="6.84615380383104,30.0752688365558" />
                   <mssgle:CubicBezierSegment
-                    Point1="8,31.3333333333335"
-                    Point2="12,31.3333333333335"
-                    Point3="12,35.3333333333335" />
+                    Point1="6.84615380383104,30.0752688365558"
+                    Point2="10.846153803831,30.0752688365558"
+                    Point3="10.846153803831,34.0752688365558" />
                   <mssgle:LineSegment
-                    End="12,55.166666666667" />
+                    End="10.846153803831,52.6505376731116" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13749,30 +13850,30 @@ where [refTable].[guid] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Slide Image\Retrieve Slides.Paths[Output 0]"
-          TopLeft="354.5,667">
+          TopLeft="360.753846379568,666.161290335481">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-125.5,102"
+              EndConnector="-131.753846379568,102.838709664519"
               Start="0,0"
-              End="-125.5,94.5">
+              End="-131.753846379568,95.3387096645185">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47" />
+                    End="0,47.4193548322593" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,47"
-                    Point2="0,51"
-                    Point3="-4,51" />
+                    Point1="0,47.4193548322593"
+                    Point2="0,51.4193548322593"
+                    Point3="-4,51.4193548322593" />
                   <mssgle:LineSegment
-                    End="-121.5,51" />
+                    End="-127.753846379568,51.4193548322593" />
                   <mssgle:CubicBezierSegment
-                    Point1="-121.5,51"
-                    Point2="-125.5,51"
-                    Point3="-125.5,55" />
+                    Point1="-127.753846379568,51.4193548322593"
+                    Point2="-131.753846379568,51.4193548322593"
+                    Point3="-131.753846379568,55.4193548322593" />
                   <mssgle:LineSegment
-                    End="-125.5,94.5" />
+                    End="-131.753846379568,95.3387096645185" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13785,30 +13886,30 @@ where [refTable].[guid] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Slide Image\Retrieve Slides.Paths[Export Column Output]"
-          TopLeft="489,571">
+          TopLeft="490.923076993615,571">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-134.5,54"
+              EndConnector="-130.169230614047,53.1612903354815"
               Start="0,0"
-              End="-134.5,46.5">
+              End="-130.169230614047,45.6612903354815">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23" />
+                    End="0,22.5806451677407" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23"
-                    Point2="0,27"
-                    Point3="-4,27" />
+                    Point1="0,22.5806451677407"
+                    Point2="0,26.5806451677407"
+                    Point3="-4,26.5806451677407" />
                   <mssgle:LineSegment
-                    End="-130.5,27" />
+                    End="-126.169230614047,26.5806451677407" />
                   <mssgle:CubicBezierSegment
-                    Point1="-130.5,27"
-                    Point2="-134.5,27"
-                    Point3="-134.5,31" />
+                    Point1="-126.169230614047,26.5806451677407"
+                    Point2="-130.169230614047,26.5806451677407"
+                    Point3="-130.169230614047,30.5806451677407" />
                   <mssgle:LineSegment
-                    End="-134.5,46.5" />
+                    End="-130.169230614047,45.6612903354815" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13900,94 +14001,58 @@ where [refTable].[guid] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="115,42"
+          Size="113.6,41.6"
           Id="Package\Get or Update Slides\Exists?"
-          TopLeft="494,195" />
+          TopLeft="493.85,195.45" />
         <NodeLayout
-          Size="159,42"
+          Size="159.2,42"
           Id="Package\Get or Update Slides\Insert New Slide"
-          TopLeft="40,429" />
+          TopLeft="35.2,402.6" />
         <NodeLayout
-          Size="179,42"
+          Size="179.2,42"
           Id="Package\Get or Update Slides\Stage Slide Updates"
           TopLeft="870,427" />
         <NodeLayout
-          Size="159,42"
+          Size="159.2,42"
           Id="Package\Get or Update Slides\Conditional Split"
           TopLeft="702,336" />
         <NodeLayout
           Size="168,42"
           Id="Package\Get or Update Slides\Retrieve Slide List"
-          TopLeft="470,22" />
-        <EdgeLayout
-          Id="Package\Get or Update Slides.Paths[Lookup No Match Output]"
-          TopLeft="533.666666666667,237">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-414.166666666667,192"
-              Start="0,0"
-              End="-414.166666666667,184.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,74.3807890222984" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,74.3807890222984"
-                    Point2="0,78.3807890222984"
-                    Point3="-4,78.3807890222984" />
-                  <mssgle:LineSegment
-                    End="-410.166666666667,78.3807890222984" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-410.166666666667,78.3807890222984"
-                    Point2="-414.166666666667,78.3807890222984"
-                    Point3="-414.166666666667,82.3807890222984" />
-                  <mssgle:LineSegment
-                    End="-414.166666666667,184.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-271.758372395833,83.3807890222984,129.350078125,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="470,22.75" />
         <EdgeLayout
           Id="Package\Get or Update Slides.Paths[Lookup Match Output]"
-          TopLeft="569.333333333333,237">
+          TopLeft="568.25,237.05">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="212.166666666667,99"
+              EndConnector="213.35,98.95"
               Start="0,0"
-              End="212.166666666667,91.5">
+              End="213.35,91.45">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.4150943396226" />
+                    End="0,36.4045833333333" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,36.4150943396226"
-                    Point2="0,40.4150943396226"
-                    Point3="4,40.4150943396226" />
+                    Point1="0,36.4045833333333"
+                    Point2="0,40.4045833333333"
+                    Point3="4,40.4045833333333" />
                   <mssgle:LineSegment
-                    End="208.166666666667,40.4150943396226" />
+                    End="209.35,40.4045833333333" />
                   <mssgle:CubicBezierSegment
-                    Point1="208.166666666667,40.4150943396226"
-                    Point2="212.166666666667,40.4150943396226"
-                    Point3="212.166666666667,44.4150943396226" />
+                    Point1="209.35,40.4045833333333"
+                    Point2="213.35,40.4045833333333"
+                    Point3="213.35,44.4045833333333" />
                   <mssgle:LineSegment
-                    End="212.166666666667,91.5" />
+                    End="213.35,91.45" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="57.8919466145835,45.4150943396226,96.3827734375,11.609375"
+              BoundingBox="58.48361328125,45.4045833333333,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14029,24 +14094,62 @@ where [refTable].[guid] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Get or Update Slides.Paths[Primary Output]"
-          TopLeft="552.75,64">
+          TopLeft="552.325,64.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,131"
+              EndConnector="0,130.7"
               Start="0,0"
-              End="0,123.5">
+              End="0,123.2">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,123.5" />
+                    End="0,123.2" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Get or Update Slides.Paths[Lookup No Match Output]"
+          TopLeft="533.05,237.05">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-418.25,165.55"
+              Start="0,0"
+              End="-418.25,158.05">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.5995833333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.5995833333333"
+                    Point2="0,67.5995833333333"
+                    Point3="-4,67.5995833333333" />
+                  <mssgle:LineSegment
+                    End="-414.25,67.5995833333333" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-414.25,67.5995833333333"
+                    Point2="-418.25,67.5995833333333"
+                    Point3="-418.25,71.5995833333333" />
+                  <mssgle:LineSegment
+                    End="-418.25,158.05" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-264.93138671875,72.5995833333333,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
